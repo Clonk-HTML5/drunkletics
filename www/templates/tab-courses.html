@@ -1,0 +1,25 @@
+<ion-view title="Courses">
+  <ion-nav-buttons side="right" ng-show="false">
+    <button class="button button-icon icon ion-ios-minus-outline"
+          ng-click="data.showDelete = !data.showDelete"></button>
+  </ion-nav-buttons>
+  <ion-content class="has-header">
+    <ion-list show-delete="data.showDelete"
+          can-swipe="data.listCanSwipe">
+      <ion-item ng-repeat="course in courses" type="item-text-wrap" href="#/tab/course/{{course._id}}" class="item-remove-animate">
+        {{course.name}}
+        <ion-delete-button class="ion-minus-circled"
+                           ng-click="onItemDelete(item)">
+        </ion-delete-button>
+        <ion-option-button class="button-positive"
+                   ng-click="share(item)">
+          Share
+        </ion-option-button>
+        <ion-option-button class="button-info"
+                           ng-click="edit(item)">
+          Edit
+        </ion-option-button>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

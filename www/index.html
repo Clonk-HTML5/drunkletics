@@ -1,11 +1,14 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="drunkletics">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
     <title></title>
 
+    <!-- <link href="https://fonts.googleapis.com/css?family=RobotoDraft%3A400%2C500%2C700%2C400italic" rel="stylesheet" type="text/css"> -->
     <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <!-- <link href="lib/ion-md-input/css/ion-md-input.min.css" rel="stylesheet"> -->
+    <!-- <link href="lib/ionic-material/ionic.material.min.css" rel="stylesheet"> -->
     <link href="css/style.css" rel="stylesheet">
 
     <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
@@ -14,60 +17,39 @@
 
     <!-- ionic/angularjs js -->
     <script src="lib/ionic/js/ionic.bundle.js"></script>
-    
-    <script src="lib/pouchdb/dist/pouchdb.min.js"></script>  
-    
+    <!--<script src="lib/ionic-material/ionic.material.min.js"></script> -->
+    <!--<script src="lib/ion-md-input/js/ion-md-input.min.js"></script> -->
+    <script src="lib/ion-profile-picture/ion-profile-picture.js"></script>
+    <script src="lib/angular-translate/angular-translate.min.js"></script>
+    <script src="lib/angular-translate-loader-static-files/angular-translate-loader-static-files.min.js"></script>
+
+    <script src="lib/pouchdb/dist/pouchdb.min.js"></script>
+
     <!-- cordova script (this will be a 404 during development) -->
     <script src="cordova.js"></script>
 
     <!-- your app's js -->
-    <script src="js/app.js"></script>
-    <script src="js/birthday.service.js"></script>
-    <script src="js/overview.controller.js"></script>
+    <script src="app/app.js"></script>
+    <script src="app/services/story.service.js"></script>
+    <script src="app/services/friends.service.js"></script>
+    <script src="app/services/courses.service.js"></script>
+    <script src="app/controllers/main.controller.js"></script>
+    <script src="app/controllers/intro.controller.js"></script>
+    <script src="app/controllers/overview.controller.js"></script>
+    <script src="app/controllers/friends.controller.js"></script>
+    <script src="app/controllers/dashboard.controller.js"></script>
+    <script src="app/controllers/account.controller.js"></script>
+    <script src="app/controllers/courses.controller.js"></script>
 
   </head>
-<body ng-app="starter">
+<body ng-controller="MainController as main">
 
-  <ion-pane ng-controller="OverviewController as vm">
-    <ion-header-bar class="bar-stable">
-      <h1 class="title">🎂  Birthdays  🎉</h1>
-      <div class="buttons">
-        <button ng-click="vm.showAddBirthdayModal()" class="button button-icon icon ion-android-add"></button>
-      </div>
+  <ion-nav-bar class="bar bar-header bar-dark">
+    <ion-nav-back-button>
+    </ion-nav-back-button>
+  </ion-nav-bar>
 
-    </ion-header-bar>
-    <ion-content>        
-      <ion-list>
-        <ion-item ng-repeat="b in vm.birthdays" ng-click="vm.showEditBirthdayModal(b)">
-          <div style="float: left">{{ b.Name }}</div>
-          <div style="float: right">{{ b.Date | date:"dd MMMM yyyy" }}</div>
-        </ion-item>
-      </ion-list>
-    </ion-content>
-  </ion-pane>
-  
-  <script id="add-or-edit-birthday.html" type="text/ng-template">
-    <ion-modal-view>
-      <ion-header-bar>
-        <h1 class="title">{{ action }} Birthday</h1> 
-        <div class="buttons">
-        <button ng-hide="isAdd" ng-click="deleteBirthday()" class="button button-icon icon ion-trash-a"></button>
-        </div>
-      </ion-header-bar>
-      <ion-content>
-        <div class="list list-inset">
-          <label class="item item-input">
-          <input type="text" placeholder="Name" ng-model="birthday.Name">
-          </label>
-          <label class="item item-input">
-          <input type="date" placeholder="Birthday" ng-model="birthday.Date">
-          </label>
-        </div>
-        <div class="padding">
-          <button ng-click="saveBirthday()" class="button button-block button-positive activated">Save</button>
-        </div>
-      </ion-content>
-    </ion-modal-view>
-  </script> 
+  <ion-nav-view></ion-nav-view>
+
 </body>
 </html>

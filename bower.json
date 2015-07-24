@@ -1,7 +1,9 @@
 {
-  "name": "ionic-tutorial-pouchdb",
+  "name": "drunkletics",
   "private": "true",
   "devDependencies": {
-    "ionic": "driftyco/ionic-bower#1.0.0-rc.4"
+    "ionic": "driftyco/ionic-bower#1.0.0-rc.4",
+    "ion-profile-picture": "0.0.1",
+    "angular-translate": "2.7.2"
   }
 }

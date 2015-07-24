@@ -1,0 +1,12 @@
+node_modules/
+bower_components/
+platforms/
+plugins/
+resources/
+www/lib
+.tmp
+.sass-cache
+*.swp
+*.swo
+*.log
+*.DS_Store

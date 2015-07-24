@@ -1,0 +1,56 @@
+<ion-view view-title="{{ 'introTitle' | translate }}">
+  <ion-nav-buttons side="left">
+    <button class="button button-positive button-clear no-animation"
+            ng-click="startApp()" ng-show="!slideIndex" translate="skipIntro">
+      Skip
+    </button>
+    <button class="button button-positive button-clear no-animation"
+            ng-click="previous()" ng-show="slideIndex > 0" translate="prev">
+      Previous
+    </button>
+  </ion-nav-buttons>
+  <ion-nav-buttons side="right">
+    <button class="button button-positive button-clear no-animation"
+            ng-click="next()" ng-show="slideIndex != 2" translate="next">
+      Next
+    </button>
+    <button class="button button-positive button-clear no-animation"
+            ng-click="startApp()" ng-show="slideIndex == 2"  translate="startApp">
+      Start App
+    </button>
+  </ion-nav-buttons>
+  <ion-content class="intro">
+  <ion-slide-box on-slide-changed="slideChanged(index)">
+    <ion-slide>
+      <button class="button button-clear" ng-click="ChangeLanguage('en')">EN</button>
+      <button class="button button-clear" ng-click="ChangeLanguage('de')">DE</button>
+
+
+      <h3  translate="introText">Welcome to Drunkletics</h3>
+      <div class="logo">
+        <img src="img/material1.jpg">
+      </div>
+      <p translate="hp1">Swipe to the right to reveal the left menu.</p>
+      <p translate="hp2">(On desktop click and drag from left to right)</p>
+    </ion-slide>
+    <ion-slide>
+      <h3>Using Awesome</h3>
+
+      <div class="list">
+        <h5>Just three steps:</h5>
+        <ol>
+          <li>Be awesome</li>
+          <li>Stay awesome</li>
+          <li>There is no step 3</li>
+        </ol>
+      </div>
+    </ion-slide>
+    <ion-slide>
+      <h3>Any questions?</h3>
+      <p>
+        Too bad!
+      </p>
+    </ion-slide>
+  </ion-slide-box>
+  </ion-content>
+</ion-view>

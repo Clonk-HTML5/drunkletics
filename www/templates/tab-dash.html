@@ -1,0 +1,41 @@
+<ion-view view-title="Dashboard">
+  <ion-nav-buttons side="right" ng-show="false">
+      <button ng-click="showAddStoryModal()" class="button button-icon icon ion-android-add"></button>
+  </ion-nav-buttons>
+  <ion-content>
+    <ion-list>
+      <ion-item ng-repeat="s in stories" ng-click="showEditStoryModal(s)">
+        <div style="float: left">{{ s.Name }}</div>
+        <div class="padding-left" style="float: left">{{ s.Text }}</div>
+        <div style="float: right">{{ s.Date | date:"dd MMMM yyyy" }}</div>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
+
+<script id="add-or-edit-story.html" type="text/ng-template">
+  <ion-modal-view>
+    <ion-header-bar>
+      <h1 class="title">{{ action }} Story</h1>
+      <div class="buttons">
+      <button ng-hide="isAdd" ng-click="deleteStory()" class="button button-icon icon ion-trash-a"></button>
+      </div>
+    </ion-header-bar>
+    <ion-content>
+      <div class="list list-inset">
+        <label class="item item-input">
+        <input type="text" placeholder="Name" ng-model="story.Name">
+        </label>
+        <label class="item item-input">
+          <textarea rows="8" cols="40" placeholder="Story" ng-model="story.Text"></textarea>
+        </label>
+        <label class="item item-input">
+        <input type="date" placeholder="Datum" ng-model="story.Date">
+        </label>
+      </div>
+      <div class="padding">
+        <button ng-click="saveStory()" class="button button-block button-positive activated">Save</button>
+      </div>
+    </ion-content>
+  </ion-modal-view>
+</script>
