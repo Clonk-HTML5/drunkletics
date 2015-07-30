@@ -49,7 +49,7 @@ angular.module('drunkletics', ['ionic', 'ion-profile-picture' ,'pascalprecht.tra
     url: '/dash',
     views: {
       'tab-dash': {
-        templateUrl: 'templates/tab-dash.html',
+        templateUrl: 'templates/dashboard/tab-dash.html',
         controller: 'OverviewController'
       }
     }
@@ -59,7 +59,7 @@ angular.module('drunkletics', ['ionic', 'ion-profile-picture' ,'pascalprecht.tra
     url: '/friends',
     views: {
       'tab-friends': {
-        templateUrl: 'templates/tab-friends.html',
+        templateUrl: 'templates/friends/tab-friends.html',
         controller: 'FriendsController'
       }
     }
@@ -68,17 +68,45 @@ angular.module('drunkletics', ['ionic', 'ion-profile-picture' ,'pascalprecht.tra
     url: '/friend/:friendId',
     views: {
       'tab-friends': {
-        templateUrl: 'templates/friend-detail.html',
+        templateUrl: 'templates/friends/friend-detail.html',
         controller: 'FriendDetailController'
       }
     }
   })
 
+  .state('tab.courses-categorie', {
+    url: '/courses-categorie',
+    views: {
+      'tab-courses': {
+        templateUrl: 'templates/courses/tab-courses-categorie-selection.html',
+        controller: 'CoursesCategorieSelectionController'
+      }
+    }
+  })
+  .state('tab.workouts', {
+    url: '/workouts',
+    views: {
+      'tab-courses': {
+        templateUrl: 'templates/courses/workouts.html',
+        controller: 'WorkoutsController'
+      }
+    }
+  })
+
+  .state('tab.workout-detail', {
+    url: '/workout/:courseId',
+    views: {
+      'tab-courses': {
+        templateUrl: 'templates/courses/workout-detail.html',
+        controller: 'WorkoutDetailController'
+      }
+    }
+  })
   .state('tab.courses', {
     url: '/courses',
     views: {
       'tab-courses': {
-        templateUrl: 'templates/tab-courses.html',
+        templateUrl: 'templates/courses/courses.html',
         controller: 'CoursesController'
       }
     }
@@ -88,7 +116,7 @@ angular.module('drunkletics', ['ionic', 'ion-profile-picture' ,'pascalprecht.tra
     url: '/course/:courseId',
     views: {
       'tab-courses': {
-        templateUrl: 'templates/course-detail.html',
+        templateUrl: 'templates/courses/course-detail.html',
         controller: 'CourseDetailController'
       }
     }
@@ -98,7 +126,7 @@ angular.module('drunkletics', ['ionic', 'ion-profile-picture' ,'pascalprecht.tra
     url: '/account',
     views: {
       'tab-account': {
-        templateUrl: 'templates/tab-account.html',
+        templateUrl: 'templates/account/tab-account.html',
         controller: 'AccountController'
       }
     }
@@ -108,7 +136,7 @@ angular.module('drunkletics', ['ionic', 'ion-profile-picture' ,'pascalprecht.tra
     url: '/account/settings',
     views: {
       'tab-account': {
-        templateUrl: 'templates/account-settings.html',
+        templateUrl: 'templates/account/account-settings.html',
         controller: 'AccountSettingsController'
       }
     }

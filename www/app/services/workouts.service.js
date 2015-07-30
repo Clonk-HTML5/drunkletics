@@ -1,6 +1,6 @@
-    angular.module('drunkletics').factory('CoursesService', ['$q', CoursesService]);
+    angular.module('drunkletics').factory('WorkoutsService', ['$q', WorkoutsService]);
 
-    function CoursesService($q) {
+    function WorkoutsService($q) {
         var _db;
         var _remoteDB;
         var _courses;
@@ -8,8 +8,8 @@
         return {
             initDB: initDB,
 
-            getAllCourses: getAllCourses,
-            getCourse: getCourse,
+            getAllWorkouts: getAllWorkouts,
+            getWorkouts: getWorkouts,
             addCourse: addCourse,
             updateCourse: updateCourse,
             deleteCourse: deleteCourse
@@ -17,8 +17,8 @@
 
         function initDB() {
             // Creates the database or opens if it already exists
-            _db = new PouchDB('courses', {adapter: 'websql'});
-            _remoteDB = new PouchDB('http://localhost:5984/courses');
+            _db = new PouchDB('workouts', {adapter: 'websql'});
+            _remoteDB = new PouchDB('http://localhost:5984/workouts');
             _db.replicate.from(_remoteDB).on('complete', function () {
               // yay, we're done!
 

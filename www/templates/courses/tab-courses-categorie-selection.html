@@ -1,0 +1,15 @@
+<ion-view title="Drunkletics">
+  <ion-content class="has-header">
+    <div class="list">
+      <a ng-repeat="categorie in categories"
+         href="#/{{categorie.link}}"
+         class="item item-thumbnail-left">
+
+        <img ng-src="{{ categorie.image }}" alt="Drunkletics">
+        <h2>{{ categorie.name }}</h2>
+        <h4>{{ categorie.description }}</h4>
+      </a>
+
+    </div>
+  </ion-content>
+</ion-view>

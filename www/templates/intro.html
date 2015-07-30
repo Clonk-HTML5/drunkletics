@@ -22,34 +22,39 @@
   <ion-content class="intro">
   <ion-slide-box on-slide-changed="slideChanged(index)">
     <ion-slide>
-      <button class="button button-clear" ng-click="ChangeLanguage('en')">EN</button>
-      <button class="button button-clear" ng-click="ChangeLanguage('de')">DE</button>
+      <div class="ion-slide-content-wrapper">
+        <button class="button button-clear" ng-click="ChangeLanguage('en')">EN</button>
+        <button class="button button-clear" ng-click="ChangeLanguage('de')">DE</button>
 
-
-      <h3  translate="introText">Welcome to Drunkletics</h3>
-      <div class="logo">
-        <img src="img/material1.jpg">
-      </div>
-      <p translate="hp1">Swipe to the right to reveal the left menu.</p>
-      <p translate="hp2">(On desktop click and drag from left to right)</p>
-    </ion-slide>
-    <ion-slide>
-      <h3>Using Awesome</h3>
-
-      <div class="list">
-        <h5>Just three steps:</h5>
-        <ol>
-          <li>Be awesome</li>
-          <li>Stay awesome</li>
-          <li>There is no step 3</li>
-        </ol>
+        <h3  translate="introText">Welcome to Drunkletics</h3>
+        <div class="logo">
+          <img src="img/material1.jpg">
+        </div>
+        <p translate="hp1">Swipe to the right to reveal the left menu.</p>
+        <p translate="hp2">(On desktop click and drag from left to right)</p>
       </div>
     </ion-slide>
     <ion-slide>
-      <h3>Any questions?</h3>
-      <p>
-        Too bad!
-      </p>
+      <div class="ion-slide-content-wrapper">
+        <h3>Using Awesome</h3>
+
+        <div class="list">
+          <h5>Just three steps:</h5>
+          <ol>
+            <li>Be awesome</li>
+            <li>Stay awesome</li>
+            <li>There is no step 3</li>
+          </ol>
+        </div>
+      </div>
+    </ion-slide>
+    <ion-slide>
+      <div class="ion-slide-content-wrapper">
+        <h3>Any questions?</h3>
+        <p>
+          Too bad!
+        </p>
+      </div>
     </ion-slide>
   </ion-slide-box>
   </ion-content>
