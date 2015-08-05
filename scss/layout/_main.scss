@@ -1,0 +1,611 @@
+img {
+  height: auto;
+  width: 100%;
+}
+
+.contentWrapper {
+  width: 200%;
+  overflow-x: hidden;
+  @include transform-translate3d(0, 0, 0);
+  transition: 0.5s all;
+  height: 100%;
+  position: relative;
+  background: #fff;
+}
+
+.home .contentWrapper {
+  background: $color-background;
+}
+
+.contentWrapper.open-nav {
+  @include transform-translate3d(-50%, 0, 0);
+  background: #fff;
+}
+
+.contentMain {
+  width: 50%;
+  position: relative;
+  top: 0;
+  left: 0;
+  padding: 0 1.5rem;
+  transition: 0.5s all;
+}
+
+// homeImageArea Styling
+.homeImageArea {
+  width: 29rem;
+  margin: 1rem auto 0 auto;
+  @extend %clearfix;
+
+  .homeImageArea-box {
+	display: block;
+	float: left;
+	width: 14rem;
+	height: 11rem;
+	margin: 0rem;
+
+	&.vorOrt, &.termine {
+	  margin-bottom: 1rem;
+	}
+
+	&.termine, &.mitglied {
+	  margin-left: 1rem;
+	}
+  }
+
+  .homeImageArea-link {
+	display: block;
+	width: 100%;
+	height: 100%;
+  }
+
+  .homeImageArea-title {
+	font-family: $font-headlines;
+	height: 2.8rem;
+	font-size: 1.5rem;
+	text-transform: uppercase;
+	font-weight: bold;
+	color: white;
+	padding: 0.2rem 0 0 0.8rem;
+  }
+
+  .homeImageArea-content {
+	padding: 1.2rem 0.8rem;
+  }
+
+  #calendar .title span {
+	font-size: 1.2rem;
+	font-weight: bold;
+	display: block;
+	color: $color-text;
+  }
+
+  #calendar .title a {
+	font-size: 1.2rem;
+	display: block;
+	color: $color-text;
+	text-decoration: none;
+  }
+
+  #calendar .all-events a {
+	font-size: 1.2rem;
+	font-weight: bold;
+	display: block;
+	color: $color-text;
+	text-align: right;
+	border-top: 1px solid $color-border;
+	margin-top: 0.6rem;
+	padding-top: 0.4rem;
+
+	&::after {
+	  content: "";
+	  @extend .icon;
+	  @extend .icon-backArrow;
+	  display: inline-block;
+	  transform: rotate(180deg);
+	  -webkit-transform: rotate(180deg);
+	}
+
+  }
+
+}
+
+
+
+// Header Image Area for Subpages
+.headerImageArea {
+  margin-left: -1.5rem;
+  margin-right: -1.5rem;
+  border-bottom: 10px solid $color-background;
+
+  img {
+	width: 148%;
+	height: auto;
+  }
+}
+
+// Themepage RECHT styling
+.image-text-arbeitsrecht-large {
+  position: absolute;
+  padding: 0.7rem 1.2rem;
+  width: 13.2rem;
+  height: 13.2rem;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.1rem;
+  font-family: Roboto Condensed, sans-serif;
+  text-transform: uppercase;
+}
+
+.topic-overview-wrapper {
+  margin-top: 1.5rem;
+  img {
+	width: 13.2rem;
+	height: 13.2rem;
+  }
+
+  .topic-overview-text {
+	h2 {
+	  font-family: $font-primary;
+	  font-size: 1.6rem;
+	  font-weight: bold;
+	  line-height: 20px;
+	  margin: 3rem 0 1.5rem 0;
+	}
+  }
+}
+
+.topic-overview {
+  .default {
+	position: relative;
+  }
+}
+
+.topic-dropdown {
+  @extend %fullwidth;
+  height: 6rem;
+  background: $color-border;
+  padding: 1.6rem 1.5rem;
+
+  span {
+	font-size: 1.2rem;
+	margin-right: 1.8rem;
+	display: inline-block;
+	margin-top: 0.2rem;
+  }
+
+  .selectfield {
+	display: inline-block;
+	width: 75%;
+	float: right;
+
+	select {
+	  width: 100%;
+	}
+
+  }
+}
+
+.mobile-select-container, .searchFilterWrapper {
+  .topic-sort {
+	height: 6rem;
+	padding-top: 2.2rem;
+  }
+
+  .sort-date {
+	font-size: 1.2rem;
+	color: $color-lightext;
+	margin-right: 1rem;
+  }
+
+  a.desc, a.asc, a.up, a.down {
+	font-size: 1.2rem;
+	color: $color-lightext;
+	text-decoration: none;
+
+	&:hover {
+	  text-decoration: none;
+	}
+
+  }
+
+  a.desc.inactive, a.down {
+	@extend .icon;
+	@extend .icon-arrowSortDate;
+	transform: rotate(180deg);
+	-webkit-transform: rotate(180deg);
+	display: inline-block;
+  }
+
+  a.desc.active {
+	display: none;
+  }
+
+  a.asc.inactive, a.up {
+	@extend .icon;
+	@extend .icon-arrowSortDate;
+	display: inline-block;
+  }
+
+  a.asc.active {
+	display: none;
+  }
+
+  .paginator-wrapper {
+	position: absolute;
+	top: 0;
+	right: 0;
+  }
+
+  .f3-widget-paginator {
+	line-height: 6rem;
+	padding: 0;
+	margin: 0;
+	height: 6rem;
+
+	li {
+	  display: inline;
+	  font-size: 1.3rem;
+	  font-weight: bold;
+	  color: $color-text;
+	  list-style: none;
+	  margin: 0;
+	  padding: 0;
+	}
+
+	li a:not([href]) {
+	  opacity: 0.5;
+	}
+
+	li.current {
+	  margin: 0 4rem;
+	}
+
+  }
+}
+
+.topic-overview .post {
+  height: 9rem;
+  border-top: 1px solid $color-border;
+  padding-top: 1rem;
+  position: relative;
+
+  a {
+	text-decoration: none;
+  }
+
+  li {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+  }
+
+  &:last-child {
+	border-bottom: 1px solid $color-border;
+  }
+
+  .more-link {
+	display: block;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 3;
+
+	&::after {
+	  content: "";
+	  @extend .icon;
+	  @extend .icon-topicArrowRed;
+	  @extend .icon-topicArrowRed;
+	  position: absolute;
+	  top: 50%;
+	  right: 0;
+	  margin-top: -0.8rem;
+	}
+
+  }
+
+  .more-link a {
+	display: block;
+	height: 100%;
+  }
+
+}
+
+.topic-overview .post .content {
+  padding-right: 4rem;
+
+  h3 {
+	font-size: 1.2rem;
+	font-weight: 400;
+	color: $color-lightext;
+  }
+
+  p a {
+	font-weight: bold;
+	color: $color-text;
+  }
+}
+
+// back button on detailpage
+.back {
+  height: 5rem;
+  border-bottom: 1px solid $color-border;
+  text-align: right;
+  @extend %fullwidth;
+  padding: 0 1.5rem;
+  padding-top: 2rem;
+  text-decoration: none;
+
+  a {
+	color: $color-text;
+	font-size: 1.1rem;
+	position: relative;
+  }
+
+  a::after {
+	content: "";
+	@extend .icon;
+	@extend .icon-backArrow;
+	position: absolute;
+	top: 4px;
+	left: -14px;
+  }
+
+}
+
+// article styling
+.article, .law, .ratgeber .guide-detail {
+  .head {
+	height: 2.9rem;
+	border-bottom: 1px solid $color-border;
+
+	@extend %fullwidth;
+	padding: 0 1.5rem;
+	padding-top: 0.5rem;
+
+  	.head-title {
+  	  font-size: 1.3rem;
+  	  color: $color-lightext;
+  	  .upper {
+  		text-transform: uppercase;
+  		font-family: roboto condensed;
+  		color: grey;
+  		letter-spacing: -0.2px;
+  	  }
+  	}
+    
+  }
+
+   h1 {
+  	margin: 0.8rem 0 2.2rem 0;
+  	line-height: 1.4;
+  }
+
+   h2 {
+	margin: 1rem 0 1rem 0;
+  }
+
+  .subtitle {
+	font-size: 1.2rem;
+	font-weight: bold;
+	line-height: 1.6;
+  }
+
+  .post-image {
+	margin: 2rem 0;
+  }
+
+  time {
+	@extend p;
+	margin: 0;
+  }
+
+  .post-sources {
+  	padding: 1.2rem 0;
+  	/*border-top: 1px solid $color-border; otherwise double-line in Urteile because of bottom-line for class="head"*/
+  	border-bottom: 1px solid $color-border;
+  	font-size: 1.1rem;
+  	line-height: 1.3;
+  	color: $color-lightext;
+  }
+
+  figure {
+
+	figcaption {
+	  font-size: 1.1rem;
+	  line-height: 17px;
+	  color: $color-lightext;
+	  padding: 1rem 0;
+	  border-bottom: 1px solid $color-border;
+	}
+
+  }
+
+
+  // portrait img
+  .post-image.portrait figure {
+	@extend %clearfix;
+
+	img {
+	  float: left;
+	  width: 14rem;
+	}
+
+	figcaption {
+	  margin-left: 15.5rem;
+	  padding: 0 0 1rem 0;
+	}
+
+  }
+
+  // author styling
+  .authors {
+
+    margin-top: 3rem;
+
+	.guestauthor, .author {
+	  height: 12rem;
+	}
+
+	.author_image {
+	  float: left;
+	}
+	.author_info {
+	  border-top: 1px solid $color-border;
+	  border-bottom: 1px solid $color-border;
+	  margin-left: 11rem;
+	  padding-top: 1.2rem;
+	  height: 100%;
+	}
+
+	.author_info_headline, .author_name, .author_position, .author_location {
+	  @extend p;
+	  margin: 0;
+	}
+
+	.author_info_headline {
+	  font-weight: bold;
+	}
+
+	.author_name {
+	  margin-bottom: 0.7rem;
+	  display: inline-block;
+	}
+
+	.author_position, .author_location {
+	  color: $color-lightext;
+	  font-size: 1.1rem;
+	  line-height: 1.3;
+	}
+  }
+}
+
+.news-single-item-container {
+  .author_info {
+
+  }
+
+  .author_info {
+	border: none!important;
+	margin: 0!important;
+	padding: 0!important;
+	position: relative;
+
+	&::before {
+	  content: "";
+	  right: 0;
+	  height: 1px;
+	  background: $color-border;
+	  position: absolute;
+	  left: 11rem;
+	  top: 0;
+	}
+	&::after {
+	  content: "";
+	  right: 0;
+	  height: 1px;
+	  background: $color-border;
+	  position: absolute;
+	  left: 11rem;
+	  bottom: 0;
+	}
+
+	span {
+	  display: block!important;
+	}
+
+	br {
+	  display: none!important;
+	}
+
+  }
+
+  .author_info_headline, .author_name, .author_position, .author_location {
+	margin-left: 11rem!important;
+  }
+
+  .author_info_headline {
+	padding-top: 1rem;
+  }
+
+}
+
+.article {
+  header.head{
+    position: relative;
+  }
+  .head-title span:after {
+    content: "";
+    width: 0.6rem;
+    height: 4rem;
+    background-color: #e4e1e0;
+    position: absolute;
+    bottom: -4.1rem;
+    left: 0;
+  }
+}
+
+/* arrow links */
+
+// download styling
+.file, .red-arrow-bg, .download {
+  color: #333;
+  position: relative;
+  font-weight: 700;
+  text-decoration: none;
+  background-image: url('../Images/migrated/eventInfo-arrow.png');
+  background-repeat: no-repeat;
+  padding-right: 15px;
+  background-position: right;
+  display: inline-block;
+}
+
+/* social sharing */
+
+.social_sharing {
+
+  margin-top: 2rem;
+
+  .types {
+    padding: 2rem 0;
+    border-top: 0.1rem solid #e4e1e0;
+    border-bottom: 0.1rem solid #e4e1e0;
+    overflow: hidden;
+  }
+
+  .icon-mail, .print a {
+    text-indent: -99999px;
+    float: left;
+    margin-right: 2.4rem;
+  }
+
+  .print a {
+
+	position: relative;
+
+    &:after {
+      @extend .icon;
+      @extend .icon-print;
+      content: "";
+      display: inline-block;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+    }
+  }
+}
+
+/*
+ * Red-Line Contentpages
+ */
+
+.red-line {
+      background-color: #ff0000;
+      height: 0.2rem;
+      width: 10rem;
+      margin: 0;
+      position: relative;
+      left: -1.5rem;
+ }

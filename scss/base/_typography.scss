@@ -1,0 +1,372 @@
+// Typography
+//
+//Styleguide 1.
+
+//Headlines
+//
+// markup:
+// <h1>Headline 1</h1>
+// <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+// <h2>Headline 2</h2>
+// <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+// <h3>Headline 3</h3>
+// <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+// <h4>Headline 4</h4>
+// <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+// <h5>Headline 5</h5>
+// <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+// <h6>Headline 6</h6>
+// <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+//
+// Styleguide 1.1
+h1 {
+    font-family: $font-primary;
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 1.4;
+    color: $color-text;
+    
+    // h1 styles for Small-Breakpoint
+    @include breakpoint(s) {
+        
+    }
+    
+    // h1 styles for Medium-Breakpoint
+    @include breakpoint(m) {
+        
+    }
+    
+    // h1 styles for Large-Breakpoint
+    @include breakpoint(l) {
+        
+    }
+    
+    // h1 styles for X-Large-Breakpoint
+    @include breakpoint(xl) {
+        
+    }
+}
+
+
+h2 {
+    font-family: $font-primary;
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 2rem;
+    color: $color-text;
+    
+    // h2 styles for Small-Breakpoint
+    @include breakpoint(s) {
+        
+    }
+    
+    // h2 styles for Medium-Breakpoint
+    @include breakpoint(m) {
+        
+    }
+    
+    // h2 styles for Large-Breakpoint
+    @include breakpoint(l) {
+        
+    }
+    
+    // h2 styles for X-Large-Breakpoint
+    @include breakpoint(xl) {
+        
+    }
+}
+
+h3 {
+    font-family: $font-primary;
+    font-size: $font-regular-text;
+    font-weight: 700;
+    line-height: 1.9rem;
+    color: $color-text;
+    
+    // h3 styles for Small-Breakpoint
+    @include breakpoint(s) {
+        
+    }
+    
+    // h3 styles for Medium-Breakpoint
+    @include breakpoint(m) {
+        
+    }
+    
+    // h3 styles for Large-Breakpoint
+    @include breakpoint(l) {
+        
+    }
+    
+    // h3 styles for X-Large-Breakpoint
+    @include breakpoint(xl) {
+        
+    }
+}
+
+
+h4 {
+    font-family: $font-headlines;
+    font-size: 2.1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: $color-text;
+    
+    // h4 styles for Small-Breakpoint
+    @include breakpoint(s) {
+        
+    }
+    
+    // h4 styles for Medium-Breakpoint
+    @include breakpoint(m) {
+        
+    }
+    
+    // h4 styles for Large-Breakpoint
+    @include breakpoint(l) {
+        
+    }
+    
+    // h4 styles for X-Large-Breakpoint
+    @include breakpoint(xl) {
+        
+    }
+}
+
+
+h5 {
+    font-family: $font-headlines;
+    font-size: 1.8rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: $color-text;
+    
+    // h5 styles for Small-Breakpoint
+    @include breakpoint(s) {
+        
+    }
+    
+    // h5 styles for Medium-Breakpoint
+    @include breakpoint(m) {
+        
+    }
+    
+    // h5 styles for Large-Breakpoint
+    @include breakpoint(l) {
+        
+    }
+    
+    // h5 styles for X-Large-Breakpoint
+    @include breakpoint(xl) {
+        
+    }
+}
+
+
+h6 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: $color-text;
+    
+    // h6 styles for Small-Breakpoint
+    @include breakpoint(s) {
+        
+    }
+    
+    // h6 styles for Medium-Breakpoint
+    @include breakpoint(m) {
+        
+    }
+    
+    // 6 styles for Large-Breakpoint
+    @include breakpoint(l) {
+        
+    }
+    
+    // h6 styles for X-Large-Breakpoint
+    @include breakpoint(xl) {
+        
+    }
+}
+
+
+// Bodytext, Paragraphs
+// 
+// markup:
+// <p>
+// Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+// </p>
+// 
+// Styleguide 1.2
+p {
+    padding: 0;
+    margin: 0 0 1rem 0;
+    font-family: $font-primary;
+    font-size: $font-regular-text;
+    font-weight: 400;
+    line-height: 1.9rem;
+    color: $color-text;
+    
+    // p styles for Small-Breakpoint
+    @include breakpoint(s) {
+        
+    }
+    
+    // p styles for Medium-Breakpoint
+    @include breakpoint(m) {
+        
+    }
+    
+    // p styles for Large-Breakpoint
+    @include breakpoint(l) {
+        
+    }
+    
+    // p styles for X-Large-Breakpoint
+    @include breakpoint(xl) {
+        
+    }    
+}
+
+
+// Links
+// 
+// a -          Normal Link
+// :hover  -    Hover Link
+// :active -    Active Link
+// :focus -     Focused Link
+// 
+// markup:
+// <a href="#" class="{$modifiers}">Das ist ein Link</a>
+// 
+// Styleguide 1.3
+.contentMain a {
+    font-family: $font-primary;
+    font-size: $font-regular-text;
+    font-weight: 400;
+    line-height: 1.5;
+    color: $color-text;
+    text-decoration: underline;
+    
+    // a styles for Small-Breakpoint
+    @include breakpoint(s) {
+        
+    }
+    
+    // a styles for Medium-Breakpoint
+    @include breakpoint(m) {
+        
+    }
+    
+    // a styles for Large-Breakpoint
+    @include breakpoint(l) {
+        
+    }
+    
+    // a styles for X-Large-Breakpoint
+    @include breakpoint(xl) {
+        
+    }
+    
+    &:hover, &:active, &:focus {
+        color: $color-brand;
+        text-decoration: underline;
+    }
+}
+
+h1, h2, h3, h4, h5, h6, .back, #calendar, .boxText {
+  a {
+	text-decoration: none!important;
+  }
+}
+
+a.red-arrow-bg {
+  text-decoration: none!important;
+}
+
+
+// Lists
+//
+// markup:
+//  <ul>
+//      <li>Unordered List</li>
+//      <li>Unordered List</li>
+//  </ul>
+//  <ol>
+//      <li>Ordered List</li>
+//      <li>Ordered List</li>
+//  </ol>
+//  <ul>
+//      <li><a href="#">List with Link</a></li>
+//      <li><a href="#">List with Link</a></li>
+//  </ul>
+//
+// Styleguide 1.4
+
+ul, ol {
+	margin: 0;
+  	padding: 0;
+  	background: none;
+  	color: $color-text;
+  	list-style: none;
+}
+
+li {
+
+}
+
+// Blockquotes
+//
+// markup:
+//  <blockquote>
+//      <p>Communicate, Realize, Optimize</p>
+//      <span>- Arrabiata Solutions</span>
+//  </blockquote>
+//
+// Styleguide 1.5
+blockquote {
+    display: inline-block;
+    
+    p {
+        font-style: italic;
+        font-size: 1.8rem;
+        text-transform: uppercase;
+        color: #ccc;
+        margin-bottom: 3px;
+        
+        &::before, &::after {
+            content: ' " ';
+        }
+    }
+    
+    span {
+        text-align: right;
+        display: block;
+        font-size: $font-regular-text;
+        font-style: italic;
+    }
+}
+//Unsorted List Style
+//
+//<ul>
+//  <li>List item</li>
+//  <li>List item</li>
+//</ul>
+//
+// Styleguide 1.6
+
+main ul{
+  
+  padding: 15px 0;
+  font-size: 13px;
+  line-height: 17px;
+  
+  li {
+      list-style-image: url('../Images/migrated/list_marker.gif');
+      font-size: $font-regular-text; 
+      padding-bottom: 6px;
+      line-height: 1.8rem;
+      margin-left: 1em;
+  }
+}
+

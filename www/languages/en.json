@@ -6,5 +6,7 @@
     "skipIntro": "Skip",
     "prev": "Prev",
     "next": "Next",
-    "startApp": "Start"
+    "startApp": "Start",
+    "accountSettings": "Account Settings",
+    "enableFriends": "Enable Friends"
 }

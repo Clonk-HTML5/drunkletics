@@ -94,7 +94,7 @@ angular.module('drunkletics', ['ionic', 'ion-profile-picture' ,'pascalprecht.tra
   })
 
   .state('tab.workout-detail', {
-    url: '/workout/:courseId',
+    url: '/workout/:workoutId',
     views: {
       'tab-courses': {
         templateUrl: 'templates/courses/workout-detail.html',

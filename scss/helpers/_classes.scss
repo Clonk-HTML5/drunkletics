@@ -1,0 +1,20 @@
+.hide-me {
+  display: none;
+}
+
+.hide-mobile {
+  @include breakpoint($max: $medium-max) {
+	display: none;
+  }
+}
+
+.hide-desktop {
+  @include breakpoint(768px) {
+    display: none;
+  }
+}
+
+%fullwidth {
+  margin-left: -1.5rem;
+  margin-right: -1.5rem;
+}

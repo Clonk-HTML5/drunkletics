@@ -1,0 +1,43 @@
+.presse {
+
+	// h1 container styling
+  .csc-header {
+	padding: 1rem 0 2.5rem 0;
+  }
+
+  .csc-textpic-text .csc-textpicHeader  h1, .csc-textpic-text  h2  {
+	font-size: 12px;
+	line-height: 18px;
+	margin-bottom: 11px;
+  }
+
+	// image and caption styling
+  .csc-textpic.csc-textpic-intext-left-nowrap.csc-textpic-intext-left-nowrap-165 {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+	line-height: 17px;
+  }
+
+  div.csc-textpic-intext-left-nowrap .csc-textpic-imagewrap {
+	max-width: 90px;
+  }
+
+  .csc-textpic-intext-left-nowrap-165 .csc-textpic-text, .csc-textpic-intext-left-nowrap-140 .csc-textpic-text {
+	margin-left: 110px;
+  }
+
+  // spacer between elements
+  .list-spacer {
+	height: 0.5rem;
+	width: 100%;
+	background: $color-background;
+	margin: 2rem 0;
+  }
+
+}
+

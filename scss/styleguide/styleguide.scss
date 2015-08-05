@@ -1,0 +1,88 @@
+.sg.header {
+    background: #1F201E!important;
+    border-top: 8px solid #69be28!important;
+}
+
+.sg.header .inner {
+    max-width: 100%!important;
+}
+
+.sg.wrapper {
+    max-width: 100%!important;
+}
+
+.hljs {
+    font-size: 1.3rem!important;
+}
+
+.sg.section-header {
+    background: #1F201E!important;
+}
+
+.sg.section.main .section-header h1 {
+    color: #69be28;
+    padding: 2rem!important;
+}
+
+.sg.section.main .section-header {
+    background: transparent!important;
+}
+
+.sg.section .sg.modifier-list {
+    background: transparent!important;
+    .item {
+        font-size: 1.6rem!important;
+        background: transparent!important;
+    }
+}
+
+//.ng-binding {
+//    font-size: 1.4rem;
+//}
+
+.styleguide-nav {
+    background: none!important;
+    &--item {
+        padding: 10px 5px;
+    }
+}
+
+.sg-code {
+    white-space: pre;
+    word-break: normal;
+    word-wrap: normal;
+    min-height: 250px;
+    padding: 10px;
+    font-size: 1.5rem;
+    &.input {
+        background: #333;
+        display: block;
+        width: 48%;
+        margin-right: 4%;
+        float: left;
+        color: white;
+        &::before {
+            content: "INPUT SCSS";
+            display: block;
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+    }
+    &.output {
+        background: #333;
+        display: block;
+        width: 48%;
+        float: left;
+        color: white;
+        &::before {
+            content: "OUTPUT CSS";
+            display: block;
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+    }
+}
+
+.section-description {
+    white-space: pre;
+}

@@ -1,0 +1,70 @@
+.headerSearchField {
+  height: 0rem;
+  background: #bcb4b2;
+  transition: 0.5s all;
+  padding: 0 1rem;
+  overflow: hidden;
+@extend %clearfix;
+}
+
+.headerSearchField.active {
+  height: 6rem;
+}
+
+.headerSearchField {
+  .tx-solr {
+	width: 30rem;
+	padding-top: 0.8rem;
+	float: right;
+  }
+
+  input {
+
+  }
+
+  #tx-solr-search-form-pi-search input[type=text] {
+	@extend p;
+	width: 25rem;
+	height: 4rem;
+	padding: 0.5rem;
+	display: block;
+	float: left;
+	border: none;
+	margin: 0;
+	border-radius: 0!important;
+  }
+
+  .searchField-submit {
+	height: 4rem;
+	width: 4rem;
+	background: white;
+	border: none;
+	outline: none;
+	padding: 0;
+	margin: 0;
+	font-size: 0;
+	margin-left: 1rem;
+	position: relative;
+
+	&:after {
+	  @extend .icon;
+	  @extend .icon-search;
+	  content: "";
+	  position: absolute;
+	  top: 0.7rem;
+	  left: 0.7rem;
+	}
+
+  }
+
+  .tx-solr-searchbox {
+	border-radius: 0;
+	font-size: inherit;
+	height: inherit;
+	left: 0;
+	padding-left: 0;
+	position: inherit;
+	width: auto;
+  }
+
+}

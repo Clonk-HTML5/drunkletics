@@ -1,0 +1,48 @@
+// Colors
+//
+// Styleguide 2.
+
+// Colors
+//
+// $color-brand - Brand Color
+// $color-text -  Text Color
+// $color-lightext - Second Text Color
+// $color-border - Border Color
+//
+// markup:
+// <div style="background: {$modifiers};" class="styleguide-color">{$modifiers}</div>
+//
+// Styleguide 2.
+$color-brand:         		#ff0000;
+$color-text:          		#333333;
+$color-lightext:			#8f8f8f;
+$color-border:				#e4e1e0;
+$color-background: 			#f5f4f4;
+$color-slider-dots: 		#dddddd;
+$color-metaNav-background: 	#f3f2f2;
+
+
+
+// Fonts
+$font-primary:          'Verdana', sans-serif;
+$font-headlines:        'Roboto Condensed', sans-serif;
+$font-regular-text:     1.2rem;
+
+
+// small breakpoints (s)
+$small:				480px;
+$small-max:			$small - 1;
+
+// medium breakpoints (m)
+$medium:			768px;
+//$medium-max:		$medium - 1;
+// just for testing tablet
+$medium-max:		$medium;
+
+// large breakpoints (l)
+$large:				980px;
+$large-max:			$large - 1;
+
+// extra-large breakpoints (xl)
+$extra-large: 		1200px;
+$extra-large-max: 	$extra-large - 1;

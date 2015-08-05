@@ -1,0 +1,107 @@
+// Forms
+//
+// Styleguide 4
+
+
+// Textfield
+//
+// markup:
+//  <div class="textfield">
+//      <label for="textfield">Textfeld:</label>
+//      <input type="text" name="textfield" id="textfield">
+//  </div>
+//
+// Styleguide 4.1
+
+.textfield input {
+    padding: 5px 10px;
+    font-size: 1.5rem;
+}
+
+.textfield label {
+    display: block;
+    font-size: 1.6rem;
+}
+
+
+
+// Textarea
+//
+// markup:
+//  <div class="textarea">
+//      <label for="textarea">Textarea:</label>
+//      <textarea name="textarea"></textarea>
+//  </div>
+//
+// Styleguide 4.2
+.textarea textarea {
+    width: 100%;
+    font-size: 1.5rem;
+}
+
+.textarea label {
+    font-size: 1.6rem;
+    display: block;
+}
+
+
+
+// Radio Buttons
+//
+// markup:
+//  <div class="radio">
+//      <input type="radio" id="mc" name="Zahlmethode" value="Mastercard"><label for="mc"> Mastercard</label><br> 
+//      <input type="radio" id="vi" name="Zahlmethode" value="Visa"><label for="vi">  Visa</label><br> 
+//      <input type="radio" id="ae" name="Zahlmethode" value="AmericanExpress"><label for="ae"> American Express</label> 
+//  </div>
+//
+// Styleguide 4.3
+.radio label {
+    font-size: 1.6rem;
+    padding: 5px 10px;
+}
+
+
+
+// Checkboxes
+//
+// markup:
+//  <div class="checkbox">
+//      <input type="checkbox" name="opt" id="smartphone" value="smartphone"><label for="smartphone">Smartphone<br>
+//      <input type="checkbox" name="opt" id="tablet" value="tablet"><label for="tablet">Tablet<br>
+//      <input type="checkbox" name="opt" id="notebook" value="notebook"><label for="notebook">Notebook<br>
+//  </div>
+//
+// Styleguide 4.4
+.checkbox label {
+    font-size: 1.6rem;
+    padding: 5px 10px;
+}
+
+
+// Selectfield
+//
+// markup:
+//  <div class="selectfield">
+//      <select>
+//          <option value="bmw">BMW</option>
+//          <option value="audi">AUDI</option>
+//          <option value="mercedes">MERCEDES</option>
+//      </select>
+//  </div>
+//
+// Styleguide 4.5
+.selectfield select {
+    padding: 0.5rem 1rem;
+    font-size: 1.2rem;
+    
+    option {
+        padding: 0.5rem;
+    }
+    
+}
+
+input[type=text], textarea {
+  box-shadow: none;
+  -webkit-appearance: none;
+}

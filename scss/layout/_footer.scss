@@ -1,0 +1,105 @@
+// ###
+// ### General Footer Section
+// ###
+
+footer {
+  background: $color-background;
+  padding-top: 9rem;
+  width: 50%;
+  position: relative;
+}
+
+.open-nav footer {
+  display: none;
+}
+
+.footer-wrap {
+  height: 7.5rem;
+  background: #fff;
+}
+
+.footer-wrap .footer-left {
+  width: 100%;
+  padding: 1.5rem 0 0 1.5rem;
+  color: #8f8f8f;
+  font-size: 11px;
+  
+  a {
+    color: #8f8f8f;
+    font-size: 1.1rem;
+  	padding: 0;
+  	margin: 0;
+  	display: inline;
+  	text-decoration: none;
+
+	&:after {
+	  content: "\0020|\0020";
+	}
+
+  }
+  
+  .footer-disclaimer, .footer-copyright {
+    float: left;
+  }
+  
+}
+
+.footer-wrap .footer-right {
+  width: 100%;
+  display: block;
+  float: left;
+  padding: 1rem 0 0 1.5rem;
+
+  .footerPlaces, .footerFacebook, .footerRSS {
+	display: block;
+  }
+
+
+  .footerPlaces{
+    float: left;
+    
+    &:after{
+      content: "";
+      @extend .icon;
+      @extend .icon-footerPlaces;
+      display: block;
+    }
+  }
+  
+  .footerRSS{
+    float: left;  
+    margin-left: 1.5rem;
+    
+    &:after{
+      content: "";
+      @extend .icon;
+      @extend .icon-footerRSS;
+      display: block;
+    }    
+  }
+
+  .footerFacebook {
+	float: left;
+	margin-left: 1.5rem;
+
+	&:after{
+	  content: "";
+	  @extend .icon;
+	  @extend .icon-footerFacebook;
+	  display: block;
+	}
+
+  }
+
+}
+
+
+// to top button
+.to-top-button {
+  @extend .icon;
+  @extend .icon-toTopButton;
+  position: absolute;
+  right: 4.5rem;
+  top: 4.9rem;
+  cursor: pointer;
+}

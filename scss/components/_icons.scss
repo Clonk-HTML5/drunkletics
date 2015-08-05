@@ -1,0 +1,118 @@
+.icon {
+  background-image: url('../Images/components/iconSprite.png');
+  background-size: 400px 400px;
+  background-repeat: no-repeat;
+  display: block;
+}
+
+.icon-search {
+  background-position: 0px -50px;
+  @include size(2.5rem);
+}
+
+.icon-navicon {
+  background-position: 0px -0px;
+  @include size(3.2rem, 4rem);
+  display: block;
+  margin: 0 auto;
+}
+
+.headerMain-navicon.open-nav .icon-navicon {
+  background-position: -50px 0;
+}
+
+.icon-newsArrowLeft {
+  background-position: -50px -50px;
+  @include size(1rem, 1.7rem);
+}
+
+.icon-newsArrowRight {
+  background-position: -100px -50px;
+  @include size(1rem, 1.7rem);
+}
+
+.icon-navArrowLeft {
+  background-position: -150px 0;
+  @include size(1rem, 1.7rem);
+}
+
+.icon-navArrowRight {
+  background-position: -100px 0;
+  @include size(1rem, 1.7rem);
+}
+
+.icon-footerRSS {
+  background-position: -0px -100px;
+  @include size(2.4rem);
+}
+
+.icon-footerPlaces {
+  background-position: -50px -100px;
+  @include size(2.4rem);
+}
+
+.icon-footerFacebook {
+  background-position: -250px -100px;
+  @include size(2.4rem);
+}
+
+.icon-vor-ort {
+  background-position: 0px -150px;
+  @include size(14rem, 11rem);
+}
+
+.icon-termine {
+  background-position: -150px -150px;
+  @include size(14rem, 11rem);
+}
+
+.icon-recht-so {
+  background-position: 0px -262px;
+  @include size(14rem, 11rem);
+}
+
+.icon-mitglied {
+  background-position: -150px -262px;
+  @include size(14rem, 11rem);
+}
+
+.icon-topicArrowRed {
+  background-position: -200px 0px;
+  @include size(0.9rem, 1.6rem);
+}
+
+.icon-backArrow {
+  background-position: -100px -100px;
+  @include size(0.8rem, 0.7rem);
+}
+
+.icon-pageArrowLeft, .icon-pageArrowRight {
+  background-position: -200px -50px;
+  @include size(1.2rem, 1rem);
+  display: inline-block;
+}
+
+.icon-pageArrowRight {
+  @include transform-rotate(180deg);
+
+}
+
+.icon-toTopButton {
+  background-position: -150px -100px;
+  @include size(9.5rem, 4.8rem);
+}
+
+.icon-mail {
+  background-position: -250px -50px;
+  @include size(2.4rem, 1.7rem);
+}
+
+.icon-print {
+  background-position: -250px 0px;
+  @include size(2.4rem, 2.5rem);
+}
+
+.icon-arrowSortDate {
+  background-position: -150px -50px;
+  @include size(1rem, 0.7rem);
+}

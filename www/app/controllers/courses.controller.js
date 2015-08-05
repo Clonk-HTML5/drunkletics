@@ -7,8 +7,8 @@ angular.module('drunkletics')
 
 function CoursesCategorieSelectionController($scope) {
   $scope.categories = [
-    { id: 1, name: 'Workouts', description: 'work hard', link: 'workouts/'},
-    { id: 2, name: 'Exercises', description: 'work hard', link: 'courses/'}
+    { id: 1, name: 'Workouts', description: 'work hard', link: 'workouts'},
+    { id: 2, name: 'Exercises', description: 'work hard', link: 'courses'}
   ];
 }
 
@@ -34,8 +34,9 @@ function WorkoutsController($scope, $ionicPlatform, CoursesService) {
     CoursesService.initDB();
 
     // Get all story records from the database.
-    CoursesService.getAllCourses().then(function(courses) {
-      $scope.courses = courses;
+    CoursesService.getAllWorkouts().then(function(workouts) {
+      console.log(workouts)
+      $scope.workouts = workouts;
     });
   });
 }
@@ -44,8 +45,17 @@ function WorkoutDetailController($scope, $stateParams, $ionicPlatform, CoursesSe
   $ionicPlatform.ready(function() {
     CoursesService.initDB();
 
-    CoursesService.getCourse($stateParams.courseId).then(function(course) {
-      $scope.course = course;
+    CoursesService.getWorkoutByQuery($stateParams.workoutId).then(function(workoutAndExcercises) {
+      var excercisesArray = [];
+      for(var wEIterator in workoutAndExcercises){
+        if(workoutAndExcercises[wEIterator].type === 'workout') {
+          $scope.workout = workoutAndExcercises[wEIterator];
+        }
+        if(workoutAndExcercises[wEIterator].type === 'exercise') {
+          excercisesArray.push(workoutAndExcercises[wEIterator]);
+        }
+      }
+      $scope.excercises = excercisesArray;
     });
   });
 }

@@ -1,0 +1,31 @@
+// Hide Calendar on Home
+.home {
+  .dgb-datepicker {
+	display: none;
+  }
+
+  .dgb-dayInfo {
+	display: none;
+  }
+
+  .vorortWidget, #tx-dgb-topic-event-wrapper, .be-member {
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+  }
+
+
+  // cut text in appointment box
+  .dgb-eventInfo {
+	height: auto!important;
+
+	.title a {
+	  height: 35px;
+	  overflow: hidden;
+	  text-overflow: ellipsis;
+	  white-space: nowrap;
+	}
+
+  }
+
+}

@@ -1,11 +1,14 @@
-<ion-view title="Account Settings">
+<ion-view title="{{ 'accountSettings' | translate }}">
   <ion-content has-header="true" padding="true">
-    Account Settings
+    {{ 'accountSettings' | translate }}
     <ion-list>
     <ion-toggle ng-model="settings.enableFriends">
-        Enable Friends
+        {{ 'enableFriends' | translate }}
     </ion-toggle>
-    
+
+    <button class="button button-clear" ng-click="ChangeLanguage('en')">EN</button>
+    <button class="button button-clear" ng-click="ChangeLanguage('de')">DE</button>
+
     </ion-list>
   </ion-content>
 </ion-view>

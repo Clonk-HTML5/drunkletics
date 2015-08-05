@@ -1,0 +1,427 @@
+// Mixins
+//
+// Styleguide 6
+
+
+
+// Breakpoints
+//
+// 1.HOW TO USE: https://wiki.arrabiata.de/index.php?title=Media_Query_Mixin
+//
+// markup:
+// <pre class="sg-code input">
+// classname {
+//     font-size: 1.6rem;
+//     @include breakpoint(s) {
+//         font-size: 2rem;
+//     }
+// }
+// </pre>
+// <pre class="sg-code output">
+// classname {
+//     font-size: 1.6rem;
+// }
+// @media (min-width: 480px) {
+//     classname {
+//         font-size: 2rem;
+//     }
+// }
+// </pre>
+//
+// Styleguide 6.1
+@mixin breakpoint($min: 0, $max: 0) {
+  $type: type-of($min);
+
+  @if $type == string {
+
+	@if $min == s {
+	  @media (min-width: #{$small}) { @content; }
+	}
+
+	@else if $min == s-max {
+	  @media (max-width: #{$small-max}) { @content; }
+	}
+
+	@else if $min == m {
+	  @media (min-width: #{$medium}) { @content; }
+	}
+
+	@else if $min == m-max {
+	  @media (max-width: #{$medium-max}) { @content; }
+	}
+
+	@else if $min == l {
+	  @media (min-width: #{$large}) { @content; }
+	}
+
+	@else if $min == l-max {
+	  @media (max-width: #{$large-max}) { @content; }
+	}
+
+	@else if $min == xl {
+	  @media (min-width: #{$extra-large}) { @content; }
+	}
+
+	@else if $min == xl-max {
+	  @media (max-width: #{$extra-large-max}) { @content; }
+	}
+  }
+
+  @else if $type == number {
+	$query: "all" !default;
+	@if $min != 0 and $max != 0 {
+	  $query: "(min-width: #{$min}) and (max-width: #{$max})";
+	}
+	@else if $min != 0 and $max == 0 {
+	  $query: "(min-width: #{$min})";
+	}
+	@else if $min == 0 and $max != 0 {
+	  $query: "(max-width: #{$max})";
+	}
+	@media #{$query} {
+	  @content;
+	}
+  }
+}
+
+
+
+// Horizontal Gradients
+//
+// @include horizontal-gradient($startColor, $endColor);
+//
+// markup:
+// <pre class="sg-code input">
+// classname {
+//     @include horizontal-gradient(#222, #666);
+// }
+// </pre>
+// <pre class="sg-code output">
+// classname {
+//     background: #222;
+//     background: -moz-linear-gradient(left, #222 0%, #666 100%);
+//     background: -webkit-gradient(left top, right top, color-stop(0%, #222), color-stop(100%, #666));
+//     background: -webkit-linear-gradient(left, #222 0%, #666 100%);
+//     background: -o-linear-gradient(left, #222) 0%, #666 100%);
+//     background: -ms-linear-gradient(left, #222 0%, #666 100%);
+//     background: linear-gradient(to right, #222 0%, #666 100%);
+//     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#222', endColorstr='#666', GradientType=1 );
+// }
+// </pre>
+//
+// Styleguide 6.2
+@mixin horizontal-gradient($startColor, $endColor) {
+    background: $startColor;
+    background: -moz-linear-gradient(left, $startColor 0%, $endColor 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, $startColor), color-stop(100%, $endColor));
+    background: -webkit-linear-gradient(left, $startColor 0%, $endColor 100%);
+    background: -o-linear-gradient(left, $startColor 0%, $endColor 100%);
+    background: -ms-linear-gradient(left, $startColor 0%, $endColor 100%);
+    background: linear-gradient(to right, $startColor 0%, $endColor 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$startColor', endColorstr='$endColor', GradientType=1 );
+}
+
+
+
+// Vertical Gradients
+//
+// @include vertical-gradient($startColor, $endColor);
+//
+// markup:
+// <pre class="sg-code input">
+// classname {
+//     @include vertical-gradient(#222, #666);
+// }
+// </pre>
+// <pre class="sg-code output">
+// classname {
+//     background: $startcolor;
+//     background: -moz-linear-gradient(top, #222 0%,  #666 100%);
+//     background: -webkit-gradient(left top, left bottom, color-stop(0%, #222), color-stop(100%,  #666));
+//     background: -webkit-linear-gradient(top, #222 0%,  #666 100%);
+//     background: -o-linear-gradient(top, #222 0%,  #666 100%);
+//     background: -ms-linear-gradient(top, #222 0%,  #666 100%);
+//     background: linear-gradient(to bottom, #222 0%,  #666 100%);
+//     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#222', endColorstr=' #666', GradientType=0 );
+// }
+// </pre>
+//
+// Styleguide 6.3
+@mixin vertical-gradient($startColor, $endColor) {
+background: $startcolor;
+background: -moz-linear-gradient(top, $startColor 0%,  $endColor 100%);
+background: -webkit-gradient(left top, left bottom, color-stop(0%, $startColor), color-stop(100%,  $endColor));
+background: -webkit-linear-gradient(top, $startColor 0%,  $endColor 100%);
+background: -o-linear-gradient(top, $startColor 0%,  $endColor 100%);
+background: -ms-linear-gradient(top, $startColor 0%,  $endColor 100%);
+background: linear-gradient(to bottom, $startColor 0%,  $endColor 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$startColor', endColorstr=' $endColor', GradientType=0 );
+}
+
+
+
+// Box Shadow
+//
+// @include box-shadow($top, $left, $blur, $spread, $color, $inset: false);
+//
+// markup:
+// <pre class="sg-code input">
+// classname {
+//     @include box-shadow(0, 0, 5px, 3px, #ffffff, true);
+// }
+// </pre>
+// <pre class="sg-code output">
+// classname {
+//     -webkit-box-shadow:inset 0 0 5px 3px #ffffff;
+//	   -moz-box-shadow:inset 0 0 5px 3px #ffffff;
+//	   box-shadow:inset 0 0 5px 3px #ffffff;
+// }
+// </pre>
+// 
+//
+// Styleguide 6.4
+@mixin box-shadow($top, $left, $blur, $spread, $color, $inset: false) {
+  @if $inset {
+	-webkit-box-shadow:inset $top $left $blur $spread $color;
+	-moz-box-shadow:inset $top $left $blur $spread $color;
+	box-shadow:inset $top $left $blur $spread $color;
+  } @else {
+	-webkit-box-shadow: $top $left $blur $spread $color;
+	-moz-box-shadow: $top $left $blur $spread $color;
+	box-shadow: $top $left $blur $spread $color;
+  }
+}
+
+
+
+// Size
+//
+// @include size($width, $height);
+//
+// markup:
+// <pre class="sg-code input">
+// classname {
+//     @include size(100px, 100px);
+// }
+// </pre>
+// <pre class="sg-code output">
+// classname {
+//     width: 100px;
+//	   height: 100px;
+// }
+// </pre>
+// 
+//
+// Styleguide 6.5
+@mixin size($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+
+
+
+// Transform: Translate
+//
+// @include transform-translate($x, $y)
+//
+// markup:
+// <pre class="sg-code input">
+// classname {
+//     @include transform-translate(50px, 100px)
+// }
+// </pre>
+// <pre class="sg-code output">
+// classname {
+//  -ms-transform: translate(50px, 100px);
+//  -webkit-transform: translate(50px, 100px);
+//  transform: translate(50px, 100px);
+// }
+// </pre>
+// 
+//
+// Styleguide 6.6
+@mixin transform-translate($x, $y: null) {
+  -ms-transform: translate($x, $y);
+  -webkit-transform: translate($x, $y);
+  transform: translate($x, $y);
+}
+
+
+
+// Transform: Translate3D
+//
+// @include transform-translate3d($x, $y, $z)
+//
+// markup:
+// <pre class="sg-code input">
+// classname {
+//     @include transform-translate3d(50px, 100px, 10px)
+// }
+// </pre>
+// <pre class="sg-code output">
+// classname {
+//  -moz-transform: translate3d(50px, 100px, 10px);
+//  -ms-transform: translate3d(50px, 100px, 10px);
+//  -o-transform: translate3d(50px, 100px, 10px);
+//  -webkit-transform: translate3d(50px, 100px, 10px);
+//  transform: translate3d(50px, 100px, 10px);
+// }
+// </pre>
+// 
+//
+// Styleguide 6.7
+@mixin transform-translate3d($x: 0, $y: 0, $z: 0) {
+  -moz-transform: translate3d($x, $y, $z);
+  -ms-transform: translate3d($x, $y, $z);
+  -o-transform: translate3d($x, $y, $z);
+  -webkit-transform: translate3d($x, $y, $z);
+  transform: translate3d($x, $y, $z);
+}
+
+// Transform: Scale
+//
+// @include transform-scale($x, $y)
+//
+// markup:
+// <pre class="sg-code input">
+// classname {
+//     @include transform-scale(1.2, 1.2)
+// }
+// </pre>
+// <pre class="sg-code output">
+// classname {
+//  -ms-transform: scale(1.2, 1.2);
+//  -webkit-transform: scale(1.2, 1.2);
+//  transform: scale(1.2, 1.2);
+// }
+// </pre>
+//
+//
+// Styleguide 6.6
+@mixin transform-scale($x, $y: null) {
+  -ms-transform: scale($x, $y);
+  -webkit-transform: scale($x, $y);
+  transform: scale($x, $y);
+}
+
+// Transform: Rotate
+//
+// @include transform-rotate($degree);
+//
+// markup:
+// <pre class="sg-code input">
+// classname {
+//     @include transform-rotate(45deg)
+// }
+// </pre>
+// <pre class="sg-code output">
+// classname {
+//  -moz-transform: rotate(45deg);
+//  -ms-transform: rotate(45deg);
+//  -o-transform: rotate(45dege);
+//  -webkit-transform: rotate(45deg);
+//  transform: rotate(45deg);
+// }
+// </pre>
+// 
+//
+// Styleguide 6.8
+@mixin transform-rotate($degree) {
+  -moz-transform: rotate($degree);
+  -ms-transform: rotate($degree);
+  -o-transform: rotate($degree);
+  -webkit-transform: rotate($degree);
+  transform: rotate($degree);
+}
+
+
+
+// Transition
+//
+// @include transition($values);
+//
+// markup:
+// <pre class="sg-code input">
+// classname {
+//      @include transition(1s all);
+// }
+// </pre>
+// <pre class="sg-code output">
+// classname {
+//  -webkit-transition: 1s all linear;
+//  -moz-transition: 1s all linear;
+//  -ms-transition: 1s all linear;
+//  -o-transition: 1s all linear;
+//  transition: 1s all linear;
+// }
+// </pre>
+// 
+//
+// Styleguide 6.9
+@mixin transition($values) {
+  -webkit-transition: $values;
+  -moz-transition: $values;
+  -ms-transition: $values;
+  -o-transition: $values;
+  transition: $values;
+}
+
+
+
+// User Select
+//
+// @include user-select($select);
+//
+// markup:
+// <pre class="sg-code input">
+// classname {
+//     @include user-select(none);
+// }
+// </pre>
+// <pre class="sg-code output">
+// classname {
+//  -moz-user-select: none;
+//  -webkit-user-select: none;
+//  -ms-user-select: none;
+//  user-select: none;
+// }
+// </pre>
+// 
+//
+// Styleguide 6.10
+@mixin user-select($select) {
+  -moz-user-select: $select;
+  -webkit-user-select: $select;
+  -ms-user-select: $select;
+  user-select: $select;
+}
+
+
+
+// Appereance
+//
+// @include appearance ($value: none);
+//
+// markup:
+// <pre class="sg-code input">
+// classname {
+//      @include appearance;
+// }
+// </pre>
+// <pre class="sg-code output">
+// classname {
+//  -webkit-appearance: none;
+//  -moz-appearance:    none;
+//  appearance:         none;
+//  border-radius: 0;
+// }
+// </pre>
+// 
+//
+// Styleguide 6.11
+@mixin appearance ($value: none) {
+  -webkit-appearance: $value;
+  -moz-appearance:    $value;
+  appearance:         $value;
+  border-radius: 0;
+}

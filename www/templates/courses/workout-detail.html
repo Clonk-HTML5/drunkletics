@@ -1,5 +1,11 @@
 <ion-view view-title="{{workout.name}}">
   <ion-content has-header="true" padding="true">
     {{workout.name}}
+
+    <ion-list>
+      <ion-item ng-repeat="excercise in excercises" type="item-text-wrap" href="#/tab/course/{{excercise._id}}">
+        {{excercise.test}}
+      </ion-item>
+    </ion-list>
   </ion-content>
 </ion-view>

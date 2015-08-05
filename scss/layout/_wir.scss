@@ -1,0 +1,845 @@
+/** Job accordion */
+
+.wir.karriere.acc {
+  background: #fff
+}
+
+.wir.karriere.acc h1 {
+  font-size: 18px;
+  font-weight: 800;
+  padding-top: 2.5rem;
+  padding-bottom: 35px;
+  color: #333;
+  margin: 0;
+}
+
+.wir.karriere.acc .head {
+  padding-bottom: 9px;
+  border-bottom: 1px solid #e4e1e0;
+  height: auto;
+}
+
+.wir.karriere.acc .head-title {
+  font-family: Verdana;
+  color: #333;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.wir.karriere.acc .grey {
+  padding: 0;
+  font-family: Roboto Condensed;
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.job-accordion {
+  border-bottom: 1px solid #e4e1e0;
+}
+
+.wir.karriere.acc .job-accordion h2 {
+  padding-top: 1.4rem;
+  padding-bottom: 31px;
+  font-size: 13px;
+  font-weight: 800;
+  color: #333;
+  font-family: Verdana;
+  padding-left: 2.825em;
+  margin-top: 0;
+}
+
+.wir.karriere.acc .job-accordion h2 span.job-accordion-icon {
+  top: 33%;
+  width: 21px;
+  height: 20px;
+  background-image: url('../Images/migrated/questionAndAnswersAccClosed.png');
+}
+
+.wir.karriere.acc .job-accordion h2 span.job-accordion-icon-active {
+  top: 63%;
+  width: 21px;
+  height: 20px;
+  background-image: url('../Images/migrated/questionAndAnswerAccOpen.png');
+}
+
+.wir.karriere.acc h2#ui-accordion-1-header-0 {
+  border-top-width: 0 !important;
+}
+
+.wir.karriere.acc .job-accordion h2.ui-accordion-header-active {
+  background-color: #f2f0f0;
+  padding-bottom: 0;
+  margin-top: 0;
+  -webkit-margin-before: 0;
+  -webkit-margin-after: 0;
+}
+
+.wir.karriere.acc .job-accordion .ui-accordion-content-active {
+  background-color: #f2f0f0;
+  padding-left: 3.8rem !important;
+  padding-right: 7px !important;
+}
+
+.karriere-mobile-footer {
+  margin-top: 0.5rem;
+  padding-top: 1.7rem;
+
+    .spacer {
+      border-bottom: 0.1rem solid #e4e1e0;
+      margin: 2.5rem 0;
+    }
+    a {
+      color: #333333;
+    }
+}
+
+.wir.karriere.acc .csc-default h3 {
+  font-size: 18px !important;
+  font-weight: 800 !important;
+  color: #333;
+  font-family: Verdana;
+  padding-bottom: 15px !important;
+}
+
+.wir.karriere.acc .tx-powermail {
+  padding-bottom: 15px;
+}
+
+.wir.karriere.acc .tx-powermail h3 {
+  font-weight: 400 !important;
+  font-size: 13px !important;
+  font-family: Verdana;
+  color: #333;
+  padding-top: 0 !important;
+}
+
+.wir.karriere.acc .tx-powermail .powermail_fieldset {
+  background-color: #f2f0f0;
+  padding: 0;
+  margin-left: 16px;
+  margin-right: 16px;
+  padding-left: 11px;
+  padding-right: 11px;
+  padding-top: 29px;
+  padding-bottom: 22px;
+}
+
+.wir.karriere.acc .tx-powermail .powermail_check_outer {
+  float: left;
+}
+
+.wir.karriere.acc .tx-powermail .powermail_label {
+  margin-right: 40px;
+  width: 110px;
+}
+
+
+
+.wir.karriere.acc .tx-powermail .powermail_check_outer {
+  float: left;
+  width: 400px;
+}
+
+.wir.karriere.acc .tx-powermail .powermail_check_inner {
+  float: left;
+  width: 200px;
+}
+
+.wir.karriere.acc .tx-powermail .powermail_fieldwrap_check .powermail_check_legend {
+  position: relative;
+  top: 20px;
+  left: -158px;
+}
+
+.wir.karriere.acc .tx-powermail .powermail_check_inner label {
+  line-height: 27px;
+}
+
+.wir.karriere.acc .tx-powermail .powermail_fieldwrap_file {
+  overflow: hidden;
+}
+
+.wir.karriere.acc .tx-powermail .plus_file {
+  cursor: pointer;
+}
+
+.wir.karriere .powermail_create p {
+  padding-left: 15px;
+  padding-right: 15px;
+  font-size: 13px;
+  line-height: 17px;
+  font-weight: normal;
+}
+
+.wir.karriere .tx-powermail .fileinfo {
+  font-size: 11px;
+  line-height: 13px;
+  color: #333;
+}
+
+
+.vorortWidget, #tx-dgb-topic-event-wrapper, .be-member {
+  -moz-box-shadow: 0 0 3px 3px #e3e2e1;
+  -webkit-box-shadow: 0 0 3px 3px #e3e2e1;
+  box-shadow: 0 0 3px 3px #e3e2e1;
+  filter: progid:DXImageTransform.Microsoft.Shadow(Color=#e3e2e1, Strength=3, Direction=0),
+          progid:DXImageTransform.Microsoft.Shadow(Color=#e3e2e1, Strength=3, Direction=90),
+          progid:DXImageTransform.Microsoft.Shadow(Color=#e3e2e1, Strength=3, Direction=180),
+          progid:DXImageTransform.Microsoft.Shadow(Color=#e3e2e1, Strength=3, Direction=270);
+}
+
+/*
+    Wir Content Page - Unsere Koepfe, Ihr Recht
+*/
+.contentMain .wir h1 {
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+}
+
+.contentMain .wir .bodytext {
+  margin-bottom: 1.8rem;
+}
+
+
+.contentMain .wir #c2068 div.csc-textpic-imagecolumn, 
+#c2068 div.csc-textpic-imagecolumn .csc-textpic-image {
+  margin: 0;
+  clear:both;
+}
+
+.contentMain .wir #c2071 .csc-textpic-imagewrap {
+  width: 30rem;
+  float: left;
+  margin-right: 0;
+}
+
+.wir #c2071 img, 
+.wir #c2068 img {
+  width: 29rem;
+}
+
+
+.contentMain .wir #c2071 .csc-textpic-imagewrap,
+.contentMain .wir #c2068 .csc-textpic-imagewrap {
+  figcaption {
+        color: #8f8f8f;
+        font-size: 1.1rem;
+        line-height: 1.5rem;
+        font-family: $font-primary;
+        border-bottom: 1px solid #e4e1e0;
+        padding-bottom: 0.7rem;
+        padding-top: 1rem;
+        margin-bottom: 2.5rem;
+  }
+}
+
+/*
+ * Wir Online Redaktion / Aufsichtsrat
+ */
+
+/*
+.contentWrapper .wir #c2574 .csc-textpic-image img, 
+.contentWrapper .wir #c2676 .csc-textpic-image img, 
+.contentWrapper .wir #c2575 .csc-textpic-image img, 
+.contentWrapper .wir #c2576 .csc-textpic-image img {
+  float: left;
+  width: 9rem;
+  height: auto;
+  margin-bottom: 1.5rem;
+}
+
+*/
+
+#c2573 .red-arrow {
+  text-decoration: none;
+}
+
+.wir .contentWrapper .wir #c96 .csc-textpic-imagecolumn .nameUnderImage {
+  padding-bottom: 1.5rem;
+}
+
+#c96 .csc-header h3, #c2519 .csc-textpic-text h3 {
+  margin-bottom: 2rem;
+}
+
+.contentWrapper .wir #c2575 .csc-textpic-imagecolumn, 
+.contentWrapper .wir #c2576 .csc-textpic-imagecolumn {
+    width: 100%; 
+}
+
+.contentWrapper .wir #c2676 .bodytext {
+    margin-bottom: 3.3rem;
+}
+
+.wir figure {
+
+  figcaption {
+	font-size: 1.1rem;
+	line-height: 17px;
+	color: $color-lightext;
+	padding: 1rem 0;
+  }
+}
+
+.contentWrapper .wir #c2574 .csc-textpic-imagecolumn, 
+.contentWrapper .wir #c2676 .csc-textpic-imagecolumn, 
+.contentWrapper .wir #c2575 .csc-textpic-imagecolumn, 
+.contentWrapper .wir #c2576 .csc-textpic-imagecolumn,
+.contentWrapper .wir #c96 .csc-textpic-imagecolumn {
+  /*width: 30rem;*/
+  margin-right: 0;
+  
+  figure {
+	width: 100%;
+	margin-bottom: 1.5rem;
+
+	img {
+	  width: 9rem;
+	  height: auto;
+
+	  float: left;
+	}
+
+	figcaption {
+	  color: #8f8f8f;
+	  font-size: 1.1rem;
+	  line-height: 1.5rem;
+	  font-family: $font-primary;
+
+	  padding-bottom: 0.7rem;
+	  float: left;
+	  margin-left: 2rem;
+	  width: 18rem;
+
+	  .name, .nameUnderImage {
+		font-weight: bold;
+		color: #333;
+		font-size: $font-regular-text;
+	  }
+	}
+  }
+}
+
+/*
+*   Wir Year Book / JahrBuecher
+*/
+
+.contentMain .wir .yearbook-head {
+  padding: 0;
+  margin: 1rem 0;
+}
+
+.contentMain .wir .yearbook-head .yearbook-new, .contentMain .wir .yearbook-head .yearbooks {
+  width: 100%;
+  margin: 0 0 1rem 0;
+  height: auto;
+  padding-bottom: 1rem;
+}
+
+.contentMain .wir .yearbook-head .yearbook-new .yearbook-wrap, .contentMain .wir .yearbook-head .yearbooks .yearbook-wrap {
+  padding: 1.1rem 0.8rem 0 0.8rem;
+  
+  h2 {
+      font-family: $font-headlines;
+      width: 20rem;  
+      margin-bottom: 0;
+      padding-bottom: 0.2rem;
+  }
+  
+  .info {
+    //Subscription Text for big image
+     font-size: 1.2rem;
+     width: 20rem; 
+     margin-bottom: 0;
+     margin-top: 1rem;
+     line-height: 1.9rem;
+  }
+  
+  .small-info {
+    //Subscription Text for small image
+    margin-bottom: 1rem;
+  }
+  
+  .yearbook-image.big img{
+    //Yearbook big Image
+    width: 6rem;
+    height: auto;  
+  }
+  
+  .yearbook-image img {
+    //Yearbook small Image
+    width: 4rem;
+    height: auto;
+  }
+  
+  .more-link {
+    float: left;  
+  } 
+  
+  .yearbooks-inner-wrap .more-link {
+    margin-top: 0.5rem;
+  } 
+  
+  .yearbooks-inner-wrap .small-info.more {
+    margin-top: 0;
+  }
+}
+
+.contentMain .wir .yearbook-head {
+    
+   .redborder {
+      border: 0.3rem solid #ff0000;
+    }
+    
+    .yearbooks .redborder {
+      border-color: #8f8f8f;  
+    }   
+}
+
+.contentMain .wir .yearbook-content.new-yearbook, 
+.contentMain .wir .yearbook-content.all-yearbooks {
+  
+  a {
+   color: $color-text;
+   background-position: 100% 50%;
+   padding: 0 1.5rem 0 0;
+   font-weight: 700;
+  }
+  
+  .top-wrap {
+    padding: 0;
+    
+    .top-title {
+      font-family: $font-headlines;
+      font-size: 1.5rem;
+      line-height: 2rem;
+      text-transform: uppercase;  
+      margin-bottom: 1.3rem;
+      padding: 0;
+      color: #ff0000;
+    }
+    
+    h1 {
+      font-size: 1.5rem;
+      margin: 0 0 1rem 0;
+      padding: 0;
+      line-height: 2rem;
+    }
+  }
+  
+ .author {
+   margin-bottom: 2rem;
+   padding-bottom: 0.3rem;
+   font-size: 1.2rem;
+ }
+ 
+ .bottom-wrap {
+   padding: 0 0 0 0;
+   margin-bottom: 2rem;
+ }
+ 
+ .order, .shop {
+   margin-bottom: 1rem;
+ }
+}
+
+/*
+ *   Geschäftsführung
+ */
+
+.wir #c94 {
+  
+  .csc-textpic .csc-textpic-text {
+      #listHeadline {
+        margin-bottom: 0;
+        clear: both;
+      }
+      
+      ul {
+        padding-left: 0.3rem;
+        clear: both;    
+    }
+  }
+  
+  .csc-textpic-imagewrap .csc-textpic-image {
+    img {
+        width: 9rem;
+        height: auto;
+    }
+  }
+  
+  .csc-header {
+    margin-bottom: 2rem;
+  }
+}
+
+/*
+ *  Wir Organigramm
+ */
+
+.wir.organigram .csc-textpic,
+.wir.nv .csc-textpic .csc-textpic-caption {
+   
+  a {  
+    color: #333333;
+    text-decoration: none;
+    word-wrap: break-word;
+    font-weight: bold;
+    font-size: 13px;
+    line-height: 17px;
+  }
+  
+  a:hover{
+    color: #ff0000;
+    text-decoration: none;
+  } 
+   
+  .csc-textpic-caption {
+    padding-top: 11px;
+    padding-bottom: 10px;
+    color: #8f8f8f;
+    font-size: 13px;
+    border-bottom: none;
+  }
+}
+
+/*
+ *  Wir Regionalleiter
+ */
+
+.wir.rl {
+  
+    ul{
+      padding: 0;
+    }
+    
+    .bodytext {
+      margin: 0; 
+    }
+    .csc-textpic-text {
+      
+      .csc-textpicHeader h1{
+       font-size: 12px;
+       margin: 1rem 0 0 0;
+      }      
+    }
+    .csc-textpic-image {
+      
+      figcaption {
+        color: #8f8f8f;
+        font-size: 1.1rem;
+        line-height: 1.5rem;
+        font-family: $font-primary;
+        border-bottom: 1px solid #e4e1e0;
+        padding-bottom: 0.7rem;
+        padding-top: 0.3rem;
+        margin-bottom: 1rem;
+      }
+      img {
+        width: 9rem;
+        height: auto;
+      }
+    }
+    
+    .csc-textpic-intext-left-nowrap-165 .csc-textpic-text {
+      margin-left: 11rem;
+      
+      .underline, .paddingTop {
+        margin-bottom: 2rem;
+      }
+      
+      .bodytext {
+        margin-bottom: 0;
+        height: auto;
+      }
+      
+      ul {
+        margin: 0.5rem 0 0 0.5rem;
+        padding: 0;
+      }
+    }
+    
+    .csc-textpic-intext-left-nowrap-555 .csc-textpic-text {
+        width: 20rem;
+        margin-left: 0;
+        
+        .csc-textpicHeader h1{
+          padding-top: 19rem; 
+        }
+        
+        .bodytext {
+          margin: 0;
+          height: auto;
+        }
+      
+        ul {
+          margin-top: 0.5rem;
+          padding: 0 0 0 0.3rem;
+        }
+        
+        .paddingTop {
+          margin-bottom: 2rem;
+        }
+    }
+    
+    #c2279 { 
+      div.csc-textpic div.csc-textpic-imagecolumn {
+        clear:both;
+      }
+      .csc-textpic-imagecolumn .csc-textpic-lastcol {
+        clear:both;
+      } 
+      .csc-textpic-intext-left-nowrap .csc-textpic-text {
+        margin-left: 0;
+      } 
+      .csc-textpic-text {
+        ul {
+          margin-left: 11rem;
+        }
+        p.bodytext {
+          margin-bottom: 0;
+        }
+      }  
+    }
+    
+    #c2282 {
+      margin: 2.5rem 0; 
+      p.bodytext {
+         margin: 0;
+      }
+    }
+    
+   #c2275 .csc-textpic-text, #c2282 .csc-textpic-text, #c2276 .csc-textpic-text .csc-textpicHeader, #c2279 .csc-textpic-text .csc-textpicHeader, #c2283 .csc-textpic-text .csc-textpicHeader {
+      border-top: 1px solid #e4e1e0;
+      
+      h1 {
+        margin-top: 1rem;
+      }
+    }
+    #c2279 .csc-textpic-text .csc-textpicHeader {
+      margin-left: 11rem;
+      width: 100%;
+    }
+    
+    #c2274 {
+      ul {
+        padding: 1.5rem 0;
+      }
+      .bodytext {
+        margin-bottom: 1.8rem;
+      }
+    }
+    
+    #c2276 {
+      margin-top: 2rem;
+    }
+}
+
+/*
+*   Gewerkschaftliches Centrum
+*/
+
+.wir.gewZentrum {
+  
+  #86 .csc-textpic-image {
+    width: 100%;
+    height: auto;
+  }
+
+  #c86 .csc-textpic-imagewrap {
+    margin-bottom: 1rem;
+  }
+
+  #c86 .csc-textpic-text {
+    clear:both;
+  }
+  figcaption, .grey {
+     color: #8f8f8f;
+     font-size: 1.1rem;
+     line-height: 1.5rem;
+     font-family: $font-primary;
+     border-bottom: 1px solid #e4e1e0;
+     padding-bottom: 0.7rem;
+     padding-top: 1rem;
+   }
+   
+   .bodytext {
+     margin: 0;
+   }
+   
+   ul {
+     padding-left: 0.5rem;
+   }
+   
+   .csc-textpic-intext-left-nowrap-165,  
+   .csc-textpic-intext-left-nowrap-166,
+   #c2691 {
+   
+     .csc-textpic-image img{
+       width: 90px;
+       height: auto;
+     }
+     
+     .csc-textpic-text{
+       margin-left: 0;
+     }
+     
+     .grey {
+       margin-left: 10rem;
+       p {
+         color: #8f8f8f;
+       }
+     }
+   }
+  
+  #c2693 {
+    .grey{
+      width: 18rem;
+      margin-bottom: 2rem;
+      p{
+        color: #8f8f8f;
+      }
+    }  
+    .csc-textpic-image img{
+       width: 90px;
+       height: auto;
+    }
+     
+    .csc-textpic-text{
+       margin-left: 0;
+    }
+    
+    .noPadding {
+      margin-left: 10rem;
+    }
+  }
+  
+}
+
+/*
+ *   Statistiken
+ */
+
+.wir.nv {
+  
+  div.csc-textpic-imagewrap {
+    float: left;
+    width: 100%;
+  }
+  
+  .csc-textpic-imagewrap .csc-textpic-image{
+      
+    img {
+      width: 29rem;
+      height: auto;
+    }
+  } 
+}
+
+/*
+ * Zahlen und Fakten
+ */
+
+.wir.zuf {
+  #c2097 p.bodytext {
+      margin-bottom: 0;
+    
+  }
+}
+
+
+/*
+ * Veranstaltungen
+ */
+
+#c2585 .mobile-select-container {
+  
+  .post {
+    border-top: 1px solid #e4e1e0;
+    
+    
+    .content {
+      h3{
+        color: #8f8f8f;
+        font-weight: 400;
+        
+        &:first-child{
+          display: none;
+        }
+      }
+      
+      a {
+        color: $color-text;
+      }
+    }
+    
+  }
+  
+}
+
+/*
+ *   Recht So - Magazin
+ */
+
+.wir .rechtso-image {
+  float: left;
+  margin-right: 2.5rem;
+  
+  img {
+      width: 9rem;
+      height: auto;
+  }
+}
+
+.wir .news-list-item {
+  
+  ul {
+    padding-top: 0;  
+  }
+  
+  h3 {
+    padding-bottom: 1.5rem;
+  }
+  
+  a {
+    color: #333;
+    position: relative;
+    font-weight: 700;
+
+    &:after {
+      @extend .icon;
+      @extend .icon-backArrow;
+      content: "";
+      display: inline-block;
+      @include transform-rotate(180deg);
+      position: absolute;
+      bottom: 0.4rem;
+      margin-top: -0.35rem;
+      right: -1.5rem;
+    }
+  }
+  
+}
+
+.wir.ar, .wir.or {
+
+  .csc-textpic-imagecolumn figure {
+	position: relative;
+  }
+
+  figure.csc-textpic-image.csc-textpic-last::after {
+	content: "";
+	width: 100%;
+	height: 1px;
+	background: $color-border;
+	position: absolute;
+	left: 11rem;
+	bottom: 0;
+  }
+}
+
+#c2276 .csc-textpic-caption {
+  br {
+	display: none;
+  }
+}

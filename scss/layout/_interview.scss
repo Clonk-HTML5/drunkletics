@@ -1,0 +1,23 @@
+.interview {
+  
+  .interview-container {
+    @extend p; 
+    margin-bottom: 1.5rem;
+    color: #8f8f8f;
+    border: 1px solid #8f8f8f;
+    padding: 0.8rem 1rem;
+    font-style: italic;
+  }
+  
+  .question {
+    @extend p;
+    margin-bottom: 1.5rem;
+  }
+  
+  .answer {
+    @extend p;
+    color: #8f8f8f;
+    margin-bottom: 1.5rem;
+  }
+  
+}

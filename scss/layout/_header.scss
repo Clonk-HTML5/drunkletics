@@ -1,0 +1,63 @@
+// define header-container styles
+.headerMain {
+  position: absolute !important;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  max-width: $medium-max;
+  border-bottom: 3px solid #bcb4b2;
+  height: 7.1rem !important;
+  z-index: 2;
+  padding: 0.7rem 1.1rem 1.3rem 1.5rem;
+}
+
+// define header-logo styles
+.headerMain-logo {
+  	position: absolute;
+	width: 8rem;
+
+  	.logo-left {
+	  width: 100%;
+	  height: auto;
+	}
+
+}
+
+// define header-slogan-logo styles
+.headerMain-slogan {
+  	position: absolute;
+  	left: 10.3rem;
+	width: 6.7rem;
+
+	.logo-right {
+	  width: 100%;
+	  height: auto;
+	}
+
+}
+
+// define search-icon styles
+.headerMain-search {
+  position: absolute;
+  right: 7.9rem;
+  top: 1.8rem;
+  width: 2.5rem;
+}
+
+// define navigation-icon styles
+.headerMain-navicon {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 5.4rem;
+  height: 100%;
+  text-align: center;
+  cursor: pointer;
+  padding-top: 1.8rem;
+  transition: 0.5s bacxkground-color;
+
+  &.open-nav {
+	background-color: $color-lightext;
+  }
+}

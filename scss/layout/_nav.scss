@@ -1,0 +1,170 @@
+// define navigation container styles
+.navigationMain {
+  width: 50%;
+  position:absolute;
+  left: 50%;
+  top: 0;
+  height: 100%;
+  overflow-x: hidden;
+  z-index: 200;
+  background: $color-background;
+  transition: 0.5s all;;
+}
+
+.navigationMain .navigationWrapper {
+  width: 300%;
+  @include transform-translate3d;
+  height: 100%;
+  transition: 0.5s all;
+
+  &.open-level2 {
+	@include transform-translate3d(-33.3334%,0,0)
+  }
+
+  &.open-level3 {
+	@include transform-translate3d(-66.6667%,0,0);
+  }
+}
+
+// define level1-container styles
+.navigationMain .nav-level1 {
+  position: relative;
+  width: 33.3334%;
+  left: 0;
+  top: 0;
+}
+
+// define level2 & level3 container styles
+.navigationMain .nav-level2, .navigationMain .nav-level3 {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 100%;
+  display: none;
+
+  &.visible {
+	display: block;
+  }
+}
+
+// define the nav-item styles
+.navigationMain .nav-item, .navigationMain .home {
+  height: 4rem;
+  border-bottom: 0.1rem solid #e4e1e0;
+  font-size: 1.6rem;
+  list-style: none;
+  background: #fff;
+  
+  a {
+    color: #333333;
+    display: block;
+    height: 100%;
+    padding: 1rem 1.5rem;
+    font-size: 1.6rem;
+    text-decoration: none;
+  }
+
+  .footer-wrap {
+	a {
+	  padding: 0;
+	}
+  }
+  
+  a:hover, &.active a  {
+    color: $color-brand;
+    text-decoration: none;
+  }
+
+}
+
+// next level item
+.navigationMain .nav-item.has-sub{
+        padding: 1rem 1.5rem;       
+}
+
+// back to previous level
+.nav-level2, .nav-level3 {
+  .close-me {
+    background-color: #e8e5e5;
+    width: 100%;
+    height: 4rem;
+    border-bottom: 1px solid #e4e1e0;
+    padding: 1rem 1.5rem;
+    list-style: none;
+    font-size: 1.6rem;
+   
+    .nav-item-icon {
+      width: 100%;
+      height: 0px;
+      display: block;
+      position: relative;
+          
+      &:after {
+        content: "";
+        display: block;
+        @extend .icon;
+        @extend .icon-navArrowLeft;
+        right: 0;
+        position: absolute;
+      }
+    }
+    
+  }
+}
+
+.nav-item-icon {
+  width: 100%;
+  height: 0px;
+  display: block;
+  position: relative;
+  
+  &:after {
+    content: "";
+    @extend .icon;
+    @extend .icon-navArrowRight;
+    display: block;
+    position: absolute;
+    right: 0rem;
+  }
+}
+
+
+// Meta Navigation
+.nav-meta {
+	.nav-item {
+	  background: $color-background;
+	}
+}
+
+
+// Footer Navigation
+.nav-footer {
+	background: #fff;
+}
+
+.nav-footer .nav-footer-item {
+  display: inline;
+  margin-right: 5px;
+}
+
+.nav-footer .nav-footer-item a, .nav-item .nav-footer-item a {
+  display: inline;
+  height: auto;
+  padding: 0;
+  color: $color-lightext;
+  font-size: 11px;
+}
+
+// bottom border at end of navigation points @ lvl1
+.nav-level1 .nav-meta .nav-item:last-of-type {
+  border-bottom: 3px solid $color-border;
+}
+
+// bottom border at end of navigation points @ lvl 2 & 3
+.nav-level2.visible .nav-item:last-of-type {
+  border-bottom: 3px solid $color-border;
+}
+
+
+
+
