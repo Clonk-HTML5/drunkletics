@@ -1,6 +1,7 @@
 {
     "hp1": "Swipe to the right to reveal the left menu.",
     "hp2": "(On desktop click and drag from left to right)",
+    "selectLang": "Language",
     "introTitle": "Welcome",
     "introText": "Welcome to Drunkletics",
     "skipIntro": "Skip",

@@ -46,17 +46,26 @@
               });
         };
         function getWorkoutByQuery(workoutId) {
+          console.log(workoutId)
           return $q.when(
               _db.query(
                 {
-                  map: function (doc) {
-                    if (doc.type == 'workout') {
-                      emit([doc.type, 0], null);
-                        if(doc.exercises){
-                          for (var i in doc.exercises) {
-                            emit([doc.type, Number(i)+1], {_id: doc.exercises[i]});
-                          }
-                        }
+                  map: function (doc, emit) {
+                    console.log(doc)
+                    console.log(workoutId)
+                    if(doc._id === workoutId){
+                      if (doc.type == 'workout') {
+                          // if(doc._id === workoutId){
+                            emit([doc.type, 0]);
+                          // }
+                          console.log(doc.exercises)
+                            if(doc.exercises){
+                              for (var i in doc.exercises) {
+                                emit([doc.type, Number(i)+1], {_id: doc.exercises[i]});
+                              }
+                            }
+                          // }
+                      }
                     }
                   }
                 }
@@ -92,26 +101,56 @@
         function getAllCourses() {
 
             if (!_courses) {
-                return $q.when(_db.allDocs({ include_docs: true}))
-                          .then(function(docs) {
-                            // Each row has a .doc object and we just want to send an
-                            // array of course objects back to the calling controller,
-                            // so let's map the array to contain just the .doc objects.
-                            _courses = docs.rows.map(function(row) {
-                              if (row.doc.type == 'exercise') {
-                                console.log(row.doc.type)
-                                // Dates are not automatically converted from a string.
-                                // row.doc.Date = new Date(row.doc.Date);
-                                return row.doc;
-                              }
-                            });
+                return $q.when(
+                  _db.query(
+                    {
+                      map: function (doc) {
+                        if (doc.type == 'exercise') {
+                          emit([doc.type, 0], null);
+                        }
+                      }
+                    }
+                    , {
+                      include_docs: true,
+                      reduce: true,
+                      group: true
+                    }
+                )
+                ).then(function (doc) {
+                    _courses = doc.rows.map(function(row) {
+                        return row.doc;
+                    });
 
-                            // Listen for changes on the database.
-                            _db.changes({ live: true, since: 'now', include_docs: true})
-                               .on('change', onCoursesInDatabaseChange);
+                    // Listen for changes on the database.
+                    _db.changes({ live: true, since: 'now', include_docs: true})
+                       .on('change', onCoursesInDatabaseChange);
 
-                           return _courses;
-                         });
+                   return _courses;
+
+                  }).catch(function (err) {
+                    // boo, something went wrong!
+                  });
+
+                // return $q.when(_db.allDocs({ include_docs: true}))
+                //           .then(function(docs) {
+                //             // Each row has a .doc object and we just want to send an
+                //             // array of course objects back to the calling controller,
+                //             // so let's map the array to contain just the .doc objects.
+                //             _courses = docs.rows.map(function(row) {
+                //               if (row.doc.type == 'exercise') {
+                //                 console.log(row.doc.type)
+                //                 // Dates are not automatically converted from a string.
+                //                 // row.doc.Date = new Date(row.doc.Date);
+                //                 return row.doc;
+                //               }
+                //             });
+                //
+                //             // Listen for changes on the database.
+                //             _db.changes({ live: true, since: 'now', include_docs: true})
+                //                .on('change', onCoursesInDatabaseChange);
+                //
+                //            return _courses;
+                //          });
             } else {
                 // Return cached data as a promise
                 return $q.when(_courses);
