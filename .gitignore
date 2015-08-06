@@ -3,7 +3,6 @@ bower_components/
 platforms/
 plugins/
 resources/
-www/lib/
 .tmp
 .sass-cache
 *.swp
