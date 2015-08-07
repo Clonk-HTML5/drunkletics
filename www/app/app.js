@@ -102,6 +102,15 @@ angular.module('drunkletics', ['ionic', 'ion-profile-picture' ,'pascalprecht.tra
       }
     }
   })
+  .state('tab.start-workout', {
+    url: '/workout/start/:workoutId',
+    views: {
+      'tab-courses': {
+        templateUrl: 'templates/courses/start-workout.html',
+        controller: 'StartWorkoutController'
+      }
+    }
+  })
   .state('tab.courses', {
     url: '/courses',
     views: {
@@ -111,7 +120,6 @@ angular.module('drunkletics', ['ionic', 'ion-profile-picture' ,'pascalprecht.tra
       }
     }
   })
-
   .state('tab.course-detail', {
     url: '/course/:courseId',
     views: {
@@ -121,7 +129,15 @@ angular.module('drunkletics', ['ionic', 'ion-profile-picture' ,'pascalprecht.tra
       }
     }
   })
-
+  .state('tab.start-course', {
+    url: '/course/start/:courseId',
+    views: {
+      'tab-courses': {
+        templateUrl: 'templates/courses/start-course.html',
+        controller: 'StartCourseController'
+      }
+    }
+  })
   .state('tab.account', {
     url: '/account',
     views: {
@@ -131,7 +147,6 @@ angular.module('drunkletics', ['ionic', 'ion-profile-picture' ,'pascalprecht.tra
       }
     }
   })
-
   .state('tab.account-settings', {
     url: '/account/settings',
     views: {

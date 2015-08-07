@@ -56,12 +56,12 @@
                     if(doc._id === workoutId){
                       if (doc.type == 'workout') {
                           // if(doc._id === workoutId){
-                            emit([doc.type, 0]);
+                            emit([doc._id, 0]);
                           // }
                           console.log(doc.exercises)
                             if(doc.exercises){
                               for (var i in doc.exercises) {
-                                emit([doc.type, Number(i)+1], {_id: doc.exercises[i]});
+                                emit([doc._id, Number(i)+1], {_id: doc.exercises[i]});
                               }
                             }
                           // }
@@ -70,6 +70,8 @@
                   }
                 }
                 , {
+                  // startkey: workoutId,
+                  // endkey: workoutId + '\uffff',
                   include_docs: true,
                   reduce: true,
                   group: true

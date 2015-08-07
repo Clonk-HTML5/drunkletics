@@ -2,8 +2,10 @@ angular.module('drunkletics')
 .controller('CoursesCategorieSelectionController', ['$scope', CoursesCategorieSelectionController])
 .controller('WorkoutsController', ['$scope', '$ionicPlatform', 'CoursesService', WorkoutsController])
 .controller('WorkoutDetailController', ['$scope', '$stateParams', '$ionicPlatform', 'CoursesService', WorkoutDetailController])
+.controller('StartWorkoutController', ['$scope', '$stateParams', '$ionicPlatform', 'CoursesService', StartWorkoutController])
 .controller('CoursesController', ['$scope', '$ionicPlatform', 'CoursesService', CoursesController])
-.controller('CourseDetailController', ['$scope', '$stateParams', '$ionicPlatform', 'CoursesService', CourseDetailController]);
+.controller('CourseDetailController', ['$scope', '$stateParams', '$ionicPlatform', 'CoursesService', CourseDetailController])
+.controller('StartCourseController', ['$scope', '$stateParams', '$ionicPlatform', 'CoursesService', StartCourseController]);
 
 function CoursesCategorieSelectionController($scope) {
   $scope.categories = [
@@ -31,8 +33,6 @@ function WorkoutsController($scope, $ionicPlatform, CoursesService) {
       console.log('try to delete' + item)
     };
 
-    CoursesService.initDB();
-
     // Get all story records from the database.
     CoursesService.getAllWorkouts().then(function(workouts) {
       console.log(workouts)
@@ -43,10 +43,19 @@ function WorkoutsController($scope, $ionicPlatform, CoursesService) {
 
 function WorkoutDetailController($scope, $stateParams, $ionicPlatform, CoursesService) {
   $ionicPlatform.ready(function() {
-    CoursesService.initDB();
+
+    CoursesService.getWorkout($stateParams.workoutId).then(function(workout) {
+        $scope.workout = workout;
+    });
+  });
+}
+
+function StartWorkoutController($scope, $stateParams, $ionicPlatform, CoursesService) {
+  $ionicPlatform.ready(function() {
 
     CoursesService.getWorkoutByQuery($stateParams.workoutId).then(function(workoutAndExcercises) {
       var excercisesArray = [];
+      console.log(workoutAndExcercises)
       for(var wEIterator in workoutAndExcercises){
         if(workoutAndExcercises[wEIterator].type === 'workout') {
           $scope.workout = workoutAndExcercises[wEIterator];
@@ -79,8 +88,6 @@ function CoursesController($scope, $ionicPlatform, CoursesService) {
       console.log('try to delete' + item)
     };
 
-    CoursesService.initDB();
-
     // Get all story records from the database.
     CoursesService.getAllCourses().then(function(courses) {
       $scope.courses = courses;
@@ -90,7 +97,15 @@ function CoursesController($scope, $ionicPlatform, CoursesService) {
 
 function CourseDetailController($scope, $stateParams, $ionicPlatform, CoursesService) {
   $ionicPlatform.ready(function() {
-    CoursesService.initDB();
+
+    CoursesService.getCourse($stateParams.courseId).then(function(course) {
+      $scope.course = course;
+    });
+  });
+}
+
+function StartCourseController($scope, $stateParams, $ionicPlatform, CoursesService) {
+  $ionicPlatform.ready(function() {
 
     CoursesService.getCourse($stateParams.courseId).then(function(course) {
       $scope.course = course;
