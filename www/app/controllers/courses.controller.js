@@ -9,8 +9,8 @@ angular.module('drunkletics')
 
 function CoursesCategorieSelectionController($scope) {
   $scope.categories = [
-    { id: 1, name: 'Workouts', description: 'work hard', link: 'workouts'},
-    { id: 2, name: 'Exercises', description: 'work hard', link: 'courses'}
+    { id: 1, name: 'Workouts', description: 'work hard', link: 'workouts', image: 'img/material4.jpg'},
+    { id: 2, name: 'Exercises', description: 'work hard', link: 'courses', image: 'img/material4.jpg'}
   ];
 }
 
