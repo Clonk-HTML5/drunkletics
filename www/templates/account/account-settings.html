@@ -11,6 +11,21 @@
         <button class="button button-clear" ng-click="ChangeLanguage('en')">EN</button>
         <button class="button button-clear" ng-click="ChangeLanguage('de')">DE</button>
       </ion-item>
+
+      <button class="btn btn-block" ng-click="login()">Login with Facebook</button>
+
+       <textarea id="Message" placeholder="What's on your mind?" rows="1"></textarea>
+       <button class="btn btn-block" ng-click="share()">Share</button>
+       <hr/>
+
+       <p>Complete Facebook Logout. After logging out, you'll have to login again and provide your Facebook credentials.</p>
+       <button class="btn btn-block" ng-click="logout()">Logout</button>
+       <hr/>
+
+       <button class="btn btn-block" ng-click="readPermissions()">Read Permissions</button>
+
+       <p>Revoke App Permissions. After revoking permissions, you'll have to grant permissions again when logging in.</p>
+       <button class="btn btn-block" ng-click="revoke()">Revoke Permissions</button>
     </ion-list>
   </ion-content>
 </ion-view>

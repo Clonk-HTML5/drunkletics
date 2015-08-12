@@ -23,6 +23,7 @@
             // Creates the database or opens if it already exists
             _db = new PouchDB('drunkletics', {adapter: 'websql'});
             _remoteDB = new PouchDB('http://localhost:5984/drunkletics');
+            // _remoteDB = new PouchDB('https://drunkletics.smileupps.com/');
             _db.replicate.from(_remoteDB).on('complete', function () {
               // yay, we're done!
 
@@ -46,25 +47,18 @@
               });
         };
         function getWorkoutByQuery(workoutId) {
-          console.log(workoutId)
           return $q.when(
               _db.query(
                 {
                   map: function (doc, emit) {
-                    console.log(doc)
-                    console.log(workoutId)
                     if(doc._id === workoutId){
                       if (doc.type == 'workout') {
-                          // if(doc._id === workoutId){
-                            emit([doc._id, 0]);
-                          // }
-                          console.log(doc.exercises)
-                            if(doc.exercises){
-                              for (var i in doc.exercises) {
-                                emit([doc._id, Number(i)+1], {_id: doc.exercises[i]});
-                              }
-                            }
-                          // }
+                        emit([doc._id, 0]);
+                        if(doc.exercises){
+                          for (var i in doc.exercises) {
+                            emit([doc._id, Number(i)+1], {_id: doc.exercises[i]});
+                          }
+                        }
                       }
                     }
                   }
@@ -186,7 +180,6 @@
                             // so let's map the array to contain just the .doc objects.
                             docs.rows.map(function(row) {
                                 if(row.doc.type === 'workout') {
-                                  console.log(row.doc.type)
                                   // returnArray[] = row.doc;
                                   // Dates are not automatically converted from a string.
                                   // row.doc.Date = new Date(row.doc.Date);

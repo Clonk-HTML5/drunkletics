@@ -2,6 +2,8 @@
   <ion-content has-header="true" padding="true">
     {{workout.name}}
     {{workout.points}}
-    <a href="#/tab/workout/start/{{workout._id}}" class="button">{{ 'next' | translate }}</a>
   </ion-content>
+  <div class="bar bar-footer bar-balanced has-tabs">
+      <a href="#/tab/workout/start/{{workout._id}}" class="button title">{{ 'next' | translate }}</a>
+  </div>
 </ion-view>

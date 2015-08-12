@@ -9,7 +9,7 @@ angular.module('drunkletics')
 
 function CoursesCategorieSelectionController($scope) {
   $scope.categories = [
-    { id: 1, name: 'Workouts', description: 'work hard', link: 'workouts', image: 'img/material4.jpg'},
+    { id: 1, name: 'Workouts', description: 'work hard', link: 'workouts', image: 'img/material3.jpg'},
     { id: 2, name: 'Exercises', description: 'work hard', link: 'courses', image: 'img/material4.jpg'}
   ];
 }
@@ -35,7 +35,6 @@ function WorkoutsController($scope, $ionicPlatform, CoursesService) {
 
     // Get all story records from the database.
     CoursesService.getAllWorkouts().then(function(workouts) {
-      console.log(workouts)
       $scope.workouts = workouts;
     });
   });
@@ -55,7 +54,6 @@ function StartWorkoutController($scope, $stateParams, $ionicPlatform, CoursesSer
 
     CoursesService.getWorkoutByQuery($stateParams.workoutId).then(function(workoutAndExcercises) {
       var excercisesArray = [];
-      console.log(workoutAndExcercises)
       for(var wEIterator in workoutAndExcercises){
         if(workoutAndExcercises[wEIterator].type === 'workout') {
           $scope.workout = workoutAndExcercises[wEIterator];

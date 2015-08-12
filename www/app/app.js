@@ -1,8 +1,9 @@
-// angular.module('drunkletics', ['ionic', 'ionic-material', 'ionMdInput'])
-angular.module('drunkletics', ['ionic', 'ion-profile-picture' ,'pascalprecht.translate'])
+// angular.module('drunkletics', ['ionic', 'ngCordova', 'ion-profile-picture' ,'pascalprecht.translate'])
+angular.module('drunkletics', ['ionic', 'ion-profile-picture', 'ngOpenFB' ,'pascalprecht.translate'])
 
-.run(function($ionicPlatform) {
+.run(function($ionicPlatform, ngFB) {
   $ionicPlatform.ready(function() {
+    ngFB.init({appId: '1895957597295193'});
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
     if(window.cordova && window.cordova.plugins.Keyboard) {
