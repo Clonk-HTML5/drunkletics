@@ -7,9 +7,20 @@ angular.module('drunkletics')
               console.log(JSON.stringify(user));
               $scope.user = user;
               // $scope.myPicture = 'http://graph.facebook.com/' + user.id + '/picture?type=large';
+              $scope.getFriends(user);
           },
           errorHandler);
   }()
+
+    $scope.getFriends = function(user) {
+        //ngFB.api({path: '/' + user.id + '/friends', params:{limit: 50}}).then(
+        ngFB.api({path: '/me/friends', params:{debug: 'all'}}).then(
+            function(friends) {
+                console.log(JSON.stringify(friends));
+                $scope.friends = friends.data;
+            },
+            errorHandler);
+    }
 
   $scope.share = function() {
       ngFB.api({
@@ -31,7 +42,7 @@ angular.module('drunkletics')
 
   $scope.login = function() {
       // ngFB.login({scope: 'email,read_stream,publish_actions'}).then(
-      ngFB.login({scope: 'email,publish_actions'}).then(
+      ngFB.login({scope: 'email,user_friends,user_about_me,publish_actions'}).then(
           function(response) {
               alert('Facebook login succeeded, got access token: ' + response.authResponse.accessToken);
           },
